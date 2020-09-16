@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let rootVC = CatalogMenuViewController.instantiate()
-        self.window?.rootViewController = rootVC
+        let navigationController = UICatalogNavigationController(rootViewController: CatalogMenuViewController.instantiate())
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
 
         return true

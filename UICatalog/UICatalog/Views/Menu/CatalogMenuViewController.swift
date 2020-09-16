@@ -20,10 +20,38 @@ final class CatalogMenuViewController: UIViewController {
 extension CatalogMenuViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return UIMenu.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let menu = UIMenu.init(rawValue: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
+        cell.textLabel?.text = menu?.title
+        return cell
+    }
+}
+
+extension CatalogMenuViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let menu = UIMenu.init(rawValue: indexPath.row) else { return }
+        
+        switch menu {
+        case .searchAnimation:
+            let vc = SearchAnimationViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+enum UIMenu: Int, CaseIterable {
+    
+    case searchAnimation
+    
+    var title: String {
+        switch self {
+        case .searchAnimation:
+            return "Search Animation like facebook"
+        }
     }
 }
