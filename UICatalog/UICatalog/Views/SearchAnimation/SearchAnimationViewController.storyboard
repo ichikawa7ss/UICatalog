@@ -14,13 +14,74 @@
                     <view key="view" contentMode="scaleToFill" id="BsO-nm-xwH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZ1-1z-sVb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SearchAnimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFJ-mx-mQQ">
+                                        <rect key="frame" x="16" y="54" width="166" height="18"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
+                                        <color key="textColor" red="0.052038741440000001" green="0.50531073729999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMi-KM-T4N">
+                                        <rect key="frame" x="366" y="47" width="32" height="32"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="327" id="5Oq-ez-QFG"/>
+                                            <constraint firstAttribute="height" constant="32" id="6dx-Og-qQi"/>
+                                            <constraint firstAttribute="width" constant="32" id="yUZ-tn-wZJ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="5Oq-ez-QFG"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="WMi-KM-T4N" firstAttribute="centerY" secondItem="iFJ-mx-mQQ" secondAttribute="centerY" id="f8f-du-5zu"/>
+                                    <constraint firstAttribute="height" constant="88" id="ieh-E2-eH1"/>
+                                    <constraint firstAttribute="bottom" secondItem="iFJ-mx-mQQ" secondAttribute="bottom" constant="16" id="mLn-SZ-Pp4"/>
+                                    <constraint firstAttribute="trailing" secondItem="WMi-KM-T4N" secondAttribute="trailing" constant="16" id="reo-Qi-yxS"/>
+                                    <constraint firstAttribute="trailing" secondItem="WMi-KM-T4N" secondAttribute="trailing" constant="48" id="xhg-Bv-iTv"/>
+                                    <constraint firstItem="iFJ-mx-mQQ" firstAttribute="leading" secondItem="iZ1-1z-sVb" secondAttribute="leading" constant="16" id="zqn-Yp-yG5"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xhg-Bv-iTv"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ei5-fU-EO3" firstAttribute="trailing" secondItem="iZ1-1z-sVb" secondAttribute="trailing" id="5Uh-Jc-NdU"/>
+                            <constraint firstItem="iZ1-1z-sVb" firstAttribute="top" secondItem="BsO-nm-xwH" secondAttribute="top" id="hOe-7U-nU6"/>
+                            <constraint firstItem="iZ1-1z-sVb" firstAttribute="leading" secondItem="Ei5-fU-EO3" secondAttribute="leading" id="u25-Ob-oM1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ei5-fU-EO3"/>
                     </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="iFJ-mx-mQQ" id="oa1-Et-yxb"/>
+                        <outlet property="headerView" destination="iZ1-1z-sVb" id="lEy-e1-mkw"/>
+                        <outlet property="searchButton" destination="WMi-KM-T4N" id="FMa-U3-nhI"/>
+                        <outlet property="searchButtonTrailingConstraints" destination="reo-Qi-yxS" id="uPL-ul-KQb"/>
+                        <outlet property="searchButtonWidthConstraints" destination="yUZ-tn-wZJ" id="O0D-lZ-dBd"/>
+                        <outlet property="textFiledTrailingConstraints" destination="xhg-Bv-iTv" id="1Gk-9k-ed8"/>
+                        <outlet property="textFiledWidthConstraints" destination="5Oq-ez-QFG" id="GFc-xA-WTV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15u-FT-Ou9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="139"/>
+            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
