@@ -14,12 +14,13 @@ final class SearchAnimationViewController: UIViewController {
     @IBOutlet private weak var searchButtonGestureRecognizer: UIGestureRecognizer!
     @IBOutlet private weak var searchButtonWidthConstraints: NSLayoutConstraint!
     @IBOutlet private weak var searchButtonTrailingConstraints: NSLayoutConstraint!
-    @IBOutlet private weak var textFiledWidthConstraints: NSLayoutConstraint!
+    @IBOutlet private weak var textFiledLeadingConstraints: NSLayoutConstraint!
     @IBOutlet private weak var textFiledTrailingConstraints: NSLayoutConstraint!
     @IBOutlet private weak var searchAnimationLabel: UILabel!
     @IBOutlet private weak var headerView: UIView!
     @IBOutlet private weak var cancelButton: UIButton!
-    
+    @IBOutlet private weak var separator: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
@@ -71,14 +72,15 @@ extension SearchAnimationViewController {
         let willSearch = .expand == style
         
         // テキストフィールドの制約切り替え
-        self.textFiledWidthConstraints.isActive = willSearch
-        self.textFiledTrailingConstraints.isActive = willSearch
-        self.searchButtonWidthConstraints.isActive = !willSearch
-        self.searchButtonTrailingConstraints.isActive = !willSearch
-        
+        self.textFiledLeadingConstraints.priority = willSearch ? UILayoutPriority(rawValue: 750) : UILayoutPriority(rawValue: 250)
+        self.textFiledTrailingConstraints.priority = willSearch ? UILayoutPriority(rawValue: 750) : UILayoutPriority(rawValue: 250)
+        self.searchButtonWidthConstraints.priority = willSearch ? UILayoutPriority(rawValue: 250) : UILayoutPriority(rawValue: 750)
+        self.searchButtonTrailingConstraints.priority = willSearch ? UILayoutPriority(rawValue: 250) : UILayoutPriority(rawValue: 750)
+
         // 各パーツのUI設定
         self.searchAnimationLabel.isHidden = willSearch
         self.cancelButton.isHidden = !willSearch
+        self.separator.isHidden = !willSearch
         
         // SearchButtonGestureRecognizer
         self.searchButtonGestureRecognizer.isEnabled = !willSearch
@@ -91,7 +93,7 @@ extension SearchAnimationViewController {
     
     private func addSearchTextField() {
         // テキストフィールドの設定
-        let frame = CGRect(x: 32, y: 0, width: 300, height: 32)
+        let frame = CGRect(x: 32, y: 8, width: 300, height: 16)
         let textField = UITextField(frame: frame)
         self.searchButton.addSubview(textField)
         // テキストフィールドにフォーカス

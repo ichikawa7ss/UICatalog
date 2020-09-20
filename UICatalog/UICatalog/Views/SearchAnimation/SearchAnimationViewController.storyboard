@@ -18,6 +18,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZ1-1z-sVb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umS-8V-2KJ">
+                                        <rect key="frame" x="0.0" y="87.5" width="414" height="0.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="aOI-gt-7ON"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SearchAnimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFJ-mx-mQQ">
                                         <rect key="frame" x="16" y="54" width="166" height="18"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
@@ -43,25 +50,19 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="5Oq-ez-QFG"/>
                                             <constraint firstAttribute="height" constant="32" id="6dx-Og-qQi"/>
                                             <constraint firstItem="dMp-Ot-tRj" firstAttribute="centerY" secondItem="WMi-KM-T4N" secondAttribute="centerY" id="AjI-l3-OPq"/>
                                             <constraint firstItem="dMp-Ot-tRj" firstAttribute="leading" secondItem="WMi-KM-T4N" secondAttribute="leading" constant="8" id="oj3-9h-F77"/>
-                                            <constraint firstAttribute="width" constant="32" id="yUZ-tn-wZJ"/>
+                                            <constraint firstAttribute="width" priority="750" constant="32" id="yUZ-tn-wZJ"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="5Oq-ez-QFG"/>
-                                            </mask>
-                                        </variation>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="x5s-z5-uJ9" appends="YES" id="qNb-Ys-Pw3"/>
                                         </connections>
@@ -70,19 +71,18 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hG9-Kw-SbQ" secondAttribute="trailing" constant="16" id="B8o-3B-AKy"/>
+                                    <constraint firstItem="umS-8V-2KJ" firstAttribute="leading" secondItem="iZ1-1z-sVb" secondAttribute="leading" id="XhN-Ut-Qib"/>
                                     <constraint firstItem="hG9-Kw-SbQ" firstAttribute="centerY" secondItem="WMi-KM-T4N" secondAttribute="centerY" id="ZFc-Ll-gde"/>
+                                    <constraint firstAttribute="trailing" secondItem="umS-8V-2KJ" secondAttribute="trailing" id="e16-5l-j0S"/>
                                     <constraint firstItem="WMi-KM-T4N" firstAttribute="centerY" secondItem="iFJ-mx-mQQ" secondAttribute="centerY" id="f8f-du-5zu"/>
                                     <constraint firstAttribute="height" constant="88" id="ieh-E2-eH1"/>
+                                    <constraint firstAttribute="bottom" secondItem="umS-8V-2KJ" secondAttribute="bottom" id="mFu-Ih-ton"/>
                                     <constraint firstAttribute="bottom" secondItem="iFJ-mx-mQQ" secondAttribute="bottom" constant="16" id="mLn-SZ-Pp4"/>
-                                    <constraint firstAttribute="trailing" secondItem="WMi-KM-T4N" secondAttribute="trailing" constant="16" id="reo-Qi-yxS"/>
-                                    <constraint firstAttribute="trailing" secondItem="WMi-KM-T4N" secondAttribute="trailing" constant="96" id="xhg-Bv-iTv"/>
+                                    <constraint firstAttribute="trailing" secondItem="WMi-KM-T4N" secondAttribute="trailing" priority="750" constant="16" id="reo-Qi-yxS"/>
+                                    <constraint firstItem="WMi-KM-T4N" firstAttribute="leading" secondItem="iZ1-1z-sVb" secondAttribute="leading" priority="250" constant="16" id="xbc-n1-DUD"/>
+                                    <constraint firstAttribute="trailing" secondItem="WMi-KM-T4N" secondAttribute="trailing" priority="250" constant="96" id="xhg-Bv-iTv"/>
                                     <constraint firstItem="iFJ-mx-mQQ" firstAttribute="leading" secondItem="iZ1-1z-sVb" secondAttribute="leading" constant="16" id="zqn-Yp-yG5"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="xhg-Bv-iTv"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -101,8 +101,9 @@
                         <outlet property="searchButtonGestureRecognizer" destination="x5s-z5-uJ9" id="QTP-ma-pfM"/>
                         <outlet property="searchButtonTrailingConstraints" destination="reo-Qi-yxS" id="uPL-ul-KQb"/>
                         <outlet property="searchButtonWidthConstraints" destination="yUZ-tn-wZJ" id="O0D-lZ-dBd"/>
+                        <outlet property="separator" destination="umS-8V-2KJ" id="Fc5-zg-ohM"/>
+                        <outlet property="textFiledLeadingConstraints" destination="xbc-n1-DUD" id="OmK-TH-guT"/>
                         <outlet property="textFiledTrailingConstraints" destination="xhg-Bv-iTv" id="1Gk-9k-ed8"/>
-                        <outlet property="textFiledWidthConstraints" destination="5Oq-ez-QFG" id="GFc-xA-WTV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15u-FT-Ou9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
