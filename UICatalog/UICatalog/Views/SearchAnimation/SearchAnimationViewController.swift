@@ -26,6 +26,7 @@ final class SearchAnimationViewController: UIViewController {
     }
 }
 
+// MARK: - Action
 extension SearchAnimationViewController {
     
     @IBAction func tapSearchButton(_ sender: UITapGestureRecognizer) {
@@ -37,7 +38,7 @@ extension SearchAnimationViewController {
     }
     
     private func updateSearchStatus(style: ButtonAnimationStyle) {
-        preupdateSearchComponentLayout(style: style)
+        presetupSearchComponentPreference(style: style)
         UIView.animate(withDuration: 0.2, delay: 0.0, animations: {
             self.view.layoutIfNeeded()
         }, completion: { _ in
@@ -48,59 +49,55 @@ extension SearchAnimationViewController {
     }
 }
 
+// MARK: - Set Preference
 extension SearchAnimationViewController {
     
     /// 検索アニメーションのコンポーネント設定を前もって設定
-    private func preupdateSearchComponentLayout(style: ButtonAnimationStyle) {
-        switch style {
-        case .expand:
-            // テキストフィールドの制約切り替え
-            self.textFiledWidthConstraints.isActive = true
-            self.textFiledTrailingConstraints.isActive = true
-            self.searchButtonWidthConstraints.isActive = false
-            self.searchButtonTrailingConstraints.isActive = false
-
-            // 各パーツのUI設定
-            self.searchAnimationLabel.isHidden = true // "Search Animation"ラベル  （命名を修正）
-            self.cancelButton.isHidden = false
-            
-            // SearchButtonGestureRecognizer
-            self.searchButtonGestureRecognizer.isEnabled = false
-
-        case .shrink:
-            // テキストフィールドの制約切り替え
-            self.textFiledWidthConstraints.isActive = false
-            self.textFiledTrailingConstraints.isActive = false
-            self.searchButtonWidthConstraints.isActive = true
-            self.searchButtonTrailingConstraints.isActive = true
-            
-            // 各パーツのUI設定
-            self.searchAnimationLabel.isHidden = false
-            self.cancelButton.isHidden = true
-            
-            // テキストフィールドを削除
-            self.searchButton.subviews.filter { $0 is UITextField }.first!.removeFromSuperview()
-            
-            // SearchButtonGestureRecognizer
-            self.searchButtonGestureRecognizer.isEnabled = true
-        }
+    private func presetupSearchComponentPreference(style: ButtonAnimationStyle) {
+        self.presetupSearchHeaderPreference(style: style)
     }
     
     /// アニメーション完了後に設定する処理
     private func didCompleteAnimation(style: ButtonAnimationStyle) {
         switch style {
         case .expand:
-            // テキストフィールドの設定
-            let frame = CGRect(x: 32, y: 0, width: 300, height: 32)
-            let textField = UITextField(frame: frame)
-            self.searchButton.addSubview(textField)
-            // テキストフィールドにフォーカス
-            textField.becomeFirstResponder()
-            textField.placeholder = "Search My Animation"
-            textField.tintColor = .gray
+            self.addSearchTextField()
         case .shrink:
             break
         }
+    }
+    
+    private func presetupSearchHeaderPreference(style: ButtonAnimationStyle) {
+        let willSearch = .expand == style
+        
+        // テキストフィールドの制約切り替え
+        self.textFiledWidthConstraints.isActive = willSearch
+        self.textFiledTrailingConstraints.isActive = willSearch
+        self.searchButtonWidthConstraints.isActive = !willSearch
+        self.searchButtonTrailingConstraints.isActive = !willSearch
+        
+        // 各パーツのUI設定
+        self.searchAnimationLabel.isHidden = willSearch
+        self.cancelButton.isHidden = !willSearch
+        
+        // SearchButtonGestureRecognizer
+        self.searchButtonGestureRecognizer.isEnabled = !willSearch
+        
+        if !willSearch {
+            // テキストフィールドを削除
+            self.searchButton.subviews.filter { $0 is UITextField }.first!.removeFromSuperview()
+        }
+    }
+    
+    private func addSearchTextField() {
+        // テキストフィールドの設定
+        let frame = CGRect(x: 32, y: 0, width: 300, height: 32)
+        let textField = UITextField(frame: frame)
+        self.searchButton.addSubview(textField)
+        // テキストフィールドにフォーカス
+        textField.becomeFirstResponder()
+        textField.placeholder = "Search My Animation"
+        textField.tintColor = .gray
     }
 }
 
