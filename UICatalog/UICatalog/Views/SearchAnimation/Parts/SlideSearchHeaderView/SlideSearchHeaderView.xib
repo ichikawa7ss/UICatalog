@@ -25,9 +25,25 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-Md-Awu" userLabel="Cancel Button">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quk-Wu-D6l" userLabel="Separator">
+                    <rect key="frame" x="0.0" y="49.5" width="414" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="fN1-6G-EFl"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SearchAnimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-ei-5oL" userLabel="Header Title Label">
+                    <rect key="frame" x="16" y="16" width="166" height="18"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
+                    <color key="textColor" red="0.052038741440000001" green="0.50531073729999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-Md-Awu" userLabel="Cancel Button">
                     <rect key="frame" x="321" y="10" width="77" height="30"/>
                     <state key="normal" title="キャンセル"/>
+                    <connections>
+                        <action selector="tapCancelButton:" destination="-1" eventType="touchUpInside" id="s2k-tF-9fo"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giT-pM-lkp" userLabel="Search Button View">
                     <rect key="frame" x="366" y="9" width="32" height="32"/>
@@ -58,19 +74,6 @@
                         <outletCollection property="gestureRecognizers" destination="pO5-An-AKc" appends="YES" id="iFL-N7-qBb"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quk-Wu-D6l" userLabel="Separator">
-                    <rect key="frame" x="0.0" y="49.5" width="414" height="0.5"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="0.5" id="fN1-6G-EFl"/>
-                    </constraints>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SearchAnimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-ei-5oL" userLabel="Header Title Label">
-                    <rect key="frame" x="16" y="16" width="166" height="18"/>
-                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
-                    <color key="textColor" red="0.052038741440000001" green="0.50531073729999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -90,7 +93,11 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="144.92753623188406" y="63.616071428571423"/>
         </view>
-        <tapGestureRecognizer id="pO5-An-AKc"/>
+        <tapGestureRecognizer id="pO5-An-AKc">
+            <connections>
+                <action selector="tapSearchButton:" destination="-1" id="OjL-HH-Ypd"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

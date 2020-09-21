@@ -18,70 +18,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZ1-1z-sVb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umS-8V-2KJ">
-                                        <rect key="frame" x="0.0" y="87.5" width="414" height="0.5"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aoa-HV-9M6" customClass="SlideSearchHeaderView" customModule="UICatalog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="38" width="414" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="0.5" id="aOI-gt-7ON"/>
+                                            <constraint firstAttribute="height" constant="50" id="GBL-d0-FKW"/>
                                         </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SearchAnimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFJ-mx-mQQ">
-                                        <rect key="frame" x="16" y="54" width="166" height="18"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
-                                        <color key="textColor" red="0.052038741440000001" green="0.50531073729999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-Kw-SbQ">
-                                        <rect key="frame" x="321" y="48" width="77" height="30"/>
-                                        <state key="normal" title="キャンセル"/>
-                                        <connections>
-                                            <action selector="tapCancelButton:" destination="dc1-Cj-dcP" eventType="touchUpInside" id="P91-Mv-Gnc"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMi-KM-T4N">
-                                        <rect key="frame" x="366" y="47" width="32" height="32"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dMp-Ot-tRj">
-                                                <rect key="frame" x="8" y="9" width="16" height="14"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="Vms-aS-XNc"/>
-                                                    <constraint firstAttribute="width" constant="16" id="ZkV-g2-D03"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="6dx-Og-qQi"/>
-                                            <constraint firstItem="dMp-Ot-tRj" firstAttribute="centerY" secondItem="WMi-KM-T4N" secondAttribute="centerY" id="AjI-l3-OPq"/>
-                                            <constraint firstItem="dMp-Ot-tRj" firstAttribute="leading" secondItem="WMi-KM-T4N" secondAttribute="leading" constant="8" id="oj3-9h-F77"/>
-                                            <constraint firstAttribute="width" priority="750" constant="32" id="yUZ-tn-wZJ"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="16"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="x5s-z5-uJ9" appends="YES" id="qNb-Ys-Pw3"/>
-                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="hG9-Kw-SbQ" secondAttribute="trailing" constant="16" id="B8o-3B-AKy"/>
-                                    <constraint firstItem="umS-8V-2KJ" firstAttribute="leading" secondItem="iZ1-1z-sVb" secondAttribute="leading" id="XhN-Ut-Qib"/>
-                                    <constraint firstItem="hG9-Kw-SbQ" firstAttribute="centerY" secondItem="WMi-KM-T4N" secondAttribute="centerY" id="ZFc-Ll-gde"/>
-                                    <constraint firstAttribute="trailing" secondItem="umS-8V-2KJ" secondAttribute="trailing" id="e16-5l-j0S"/>
-                                    <constraint firstItem="WMi-KM-T4N" firstAttribute="centerY" secondItem="iFJ-mx-mQQ" secondAttribute="centerY" id="f8f-du-5zu"/>
+                                    <constraint firstItem="Aoa-HV-9M6" firstAttribute="leading" secondItem="iZ1-1z-sVb" secondAttribute="leading" id="HPd-9I-GD3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aoa-HV-9M6" secondAttribute="trailing" id="OHe-nV-rv0"/>
                                     <constraint firstAttribute="height" constant="88" id="ieh-E2-eH1"/>
-                                    <constraint firstAttribute="bottom" secondItem="umS-8V-2KJ" secondAttribute="bottom" id="mFu-Ih-ton"/>
-                                    <constraint firstAttribute="bottom" secondItem="iFJ-mx-mQQ" secondAttribute="bottom" constant="16" id="mLn-SZ-Pp4"/>
-                                    <constraint firstAttribute="trailing" secondItem="WMi-KM-T4N" secondAttribute="trailing" priority="750" constant="16" id="reo-Qi-yxS"/>
-                                    <constraint firstItem="WMi-KM-T4N" firstAttribute="leading" secondItem="iZ1-1z-sVb" secondAttribute="leading" priority="250" constant="16" id="xbc-n1-DUD"/>
-                                    <constraint firstAttribute="trailing" secondItem="WMi-KM-T4N" secondAttribute="trailing" priority="250" constant="96" id="xhg-Bv-iTv"/>
-                                    <constraint firstItem="iFJ-mx-mQQ" firstAttribute="leading" secondItem="iZ1-1z-sVb" secondAttribute="leading" constant="16" id="zqn-Yp-yG5"/>
+                                    <constraint firstAttribute="bottom" secondItem="Aoa-HV-9M6" secondAttribute="bottom" id="sIJ-CF-DMu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -94,16 +44,7 @@
                         <viewLayoutGuide key="safeArea" id="Ei5-fU-EO3"/>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="hG9-Kw-SbQ" id="sfS-NJ-nx2"/>
-                        <outlet property="headerView" destination="iZ1-1z-sVb" id="lEy-e1-mkw"/>
-                        <outlet property="searchAnimationLabel" destination="iFJ-mx-mQQ" id="oa1-Et-yxb"/>
-                        <outlet property="searchButton" destination="WMi-KM-T4N" id="FMa-U3-nhI"/>
-                        <outlet property="searchButtonGestureRecognizer" destination="x5s-z5-uJ9" id="QTP-ma-pfM"/>
-                        <outlet property="searchButtonTrailingConstraints" destination="reo-Qi-yxS" id="uPL-ul-KQb"/>
-                        <outlet property="searchButtonWidthConstraints" destination="yUZ-tn-wZJ" id="O0D-lZ-dBd"/>
-                        <outlet property="separator" destination="umS-8V-2KJ" id="Fc5-zg-ohM"/>
-                        <outlet property="textFiledLeadingConstraints" destination="xbc-n1-DUD" id="OmK-TH-guT"/>
-                        <outlet property="textFiledTrailingConstraints" destination="xhg-Bv-iTv" id="1Gk-9k-ed8"/>
+                        <outlet property="slideSearchHeaderView" destination="Aoa-HV-9M6" id="SBM-KJ-Fd4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15u-FT-Ou9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -116,7 +57,4 @@
             <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-    </resources>
 </document>

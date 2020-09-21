@@ -9,20 +9,20 @@
 import UIKit
 
 protocol SlideSearchHeaderViewDelegate: AnyObject {
-    func willStartExpandAnimation()
-    func willStartShrinkAnimation()
-    func didEnterTextField()
-    func didChangeCharacters()
+    func willStartExpandAnimation(_ searchHeaderView: SlideSearchHeaderView)
+    func willStartShrinkAnimation(_ searchHeaderView: SlideSearchHeaderView)
+    func slideSearchHeaderView(_ searchHeaderView: SlideSearchHeaderView, didEnterTextField: UITextField)
+    func slideSearchHeaderView(_ searchHeaderView: SlideSearchHeaderView, didChangeCharacters: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)
 }
 
 extension SlideSearchHeaderViewDelegate {
-    func willExpandStartAnimation() {}
+    func willStartExpandAnimation(_ searchHeaderView: SlideSearchHeaderView) {}
     func willStartShrinkAnimation() {}
-    func didEnterTextField() {}
-    func didChangeCharacters() {}
+    func slideSearchHeaderView(_ searchHeaderView: SlideSearchHeaderView, didEnterTextField: UITextField) {}
+    func slideSearchHeaderView(_ searchHeaderView: SlideSearchHeaderView, didChangeCharacters: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) {}
 }
 
-class SlideSearchHeaderView: UIView {
+class SlideSearchHeaderView: BaseView {
 
     @IBOutlet private weak var searchButtonView: UIView!
     @IBOutlet private weak var searchButtonGestureRecognizer: UIGestureRecognizer!
@@ -35,32 +35,19 @@ class SlideSearchHeaderView: UIView {
     @IBOutlet private weak var separator: UIView!
     
     weak var delegate: SlideSearchHeaderViewDelegate?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.commonInit()
-    }
-    
-    private func commonInit() {
-        // NOP
-    }
+
 }
 
 // MARK: - Action
 extension SlideSearchHeaderView {
     
     @IBAction func tapSearchButton(_ sender: UITapGestureRecognizer) {
-        self.delegate?.willStartExpandAnimation()
+        self.delegate?.willStartExpandAnimation(self)
         self.updateSearchStatus(style: .expand)
     }
     
     @IBAction func tapCancelButton(_ sender: UIButton) {
-        self.delegate?.willStartShrinkAnimation()
+        self.delegate?.willStartShrinkAnimation(self)
         self.updateSearchStatus(style: .shrink)
     }
     
@@ -133,11 +120,13 @@ extension SlideSearchHeaderView {
 extension SlideSearchHeaderView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.delegate?.slideSearchHeaderView(self, didEnterTextField: textField)
         self.updateSearchStatus(style: .shrink)
         return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        self.delegate?.slideSearchHeaderView(self, didChangeCharacters: textField, shouldChangeCharactersIn : range, replacementString: string)
         return true
     }
 }
