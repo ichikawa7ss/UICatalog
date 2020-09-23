@@ -9,9 +9,13 @@
 import UIKit
 
 protocol SlideSearchHeaderViewDelegate: AnyObject {
+    /// 検索状態へのアニメーション実行の直前にコール
     func willStartExpandAnimation(_ searchHeaderView: SlideSearchHeaderView)
+    /// 検索状態から戻るアニメーション実行の直前にコール
     func willStartShrinkAnimation(_ searchHeaderView: SlideSearchHeaderView)
+    /// View内のtextFieldでdidEnterTextFieldデリゲートがコールされたことを伝播
     func slideSearchHeaderView(_ searchHeaderView: SlideSearchHeaderView, didEnterTextField: UITextField)
+    /// View内のtextFieldでdidChangeCharactersデリゲートがコールされたことを伝播
     func slideSearchHeaderView(_ searchHeaderView: SlideSearchHeaderView, didChangeCharacters: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)
 }
 
@@ -57,7 +61,7 @@ extension SlideSearchHeaderView {
             self.layoutIfNeeded()
         }, completion: { _ in
             self.didCompleteAnimation(style: style)
-            self.layoutIfNeeded() // todo
+            self.layoutIfNeeded()
         })
     }
 }
