@@ -40,6 +40,9 @@ extension CatalogMenuViewController: UITableViewDelegate {
         case .searchAnimation:
             let vc = SearchAnimationViewController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
+        case .regularCollectionLayout:
+            let vc = RegularCollectionLayoutViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -47,11 +50,14 @@ extension CatalogMenuViewController: UITableViewDelegate {
 enum UIMenu: Int, CaseIterable {
     
     case searchAnimation
+    case regularCollectionLayout
     
     var title: String {
         switch self {
         case .searchAnimation:
             return "Search Animation like facebook"
+        case .regularCollectionLayout:
+            return "Regular Collection Layout like WEAR"
         }
     }
 }
