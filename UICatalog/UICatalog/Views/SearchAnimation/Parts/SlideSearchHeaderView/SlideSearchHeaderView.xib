@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SlideSearchHeaderView" customModule="UICatalog" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="O3M-Md-Awu" id="Scd-1o-qE9"/>
+                <outlet property="headerTitleLabel" destination="NSQ-ei-5oL" id="PQo-Fb-7c4"/>
+                <outlet property="searchButtonGestureRecognizer" destination="pO5-An-AKc" id="V6N-1n-azk"/>
+                <outlet property="searchButtonTrailingConstraints" destination="dE5-vZ-Spn" id="ARn-EJ-pfo"/>
+                <outlet property="searchButtonView" destination="giT-pM-lkp" id="xPB-w9-zEI"/>
+                <outlet property="searchButtonWidthConstraints" destination="Udf-zf-Md9" id="mWG-km-92p"/>
+                <outlet property="separator" destination="quk-Wu-D6l" id="UEO-mg-V1j"/>
+                <outlet property="textFiledLeadingConstraints" destination="wrs-Ce-uTg" id="awD-mw-Qch"/>
+                <outlet property="textFiledTrailingConstraints" destination="nHE-U1-R13" id="KlG-BK-iFv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quk-Wu-D6l" userLabel="Separator">
+                    <rect key="frame" x="0.0" y="49.5" width="414" height="0.5"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="fN1-6G-EFl"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SearchAnimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-ei-5oL" userLabel="Header Title Label">
+                    <rect key="frame" x="16" y="16" width="166" height="18"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
+                    <color key="textColor" red="0.052038741440000001" green="0.50531073729999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-Md-Awu" userLabel="Cancel Button">
+                    <rect key="frame" x="321" y="10" width="77" height="30"/>
+                    <state key="normal" title="キャンセル"/>
+                    <connections>
+                        <action selector="tapCancelButton:" destination="-1" eventType="touchUpInside" id="s2k-tF-9fo"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giT-pM-lkp" userLabel="Search Button View">
+                    <rect key="frame" x="366" y="9" width="32" height="32"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nrL-xj-EXJ">
+                            <rect key="frame" x="8" y="9" width="16" height="14"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="16" id="3Ja-74-M7P"/>
+                                <constraint firstAttribute="height" constant="16" id="yxt-Di-cS5"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="CB3-9f-ezN"/>
+                        <constraint firstAttribute="width" priority="750" constant="32" id="Udf-zf-Md9"/>
+                        <constraint firstItem="nrL-xj-EXJ" firstAttribute="top" secondItem="giT-pM-lkp" secondAttribute="top" constant="8" id="beW-cO-CHl"/>
+                        <constraint firstItem="nrL-xj-EXJ" firstAttribute="leading" secondItem="giT-pM-lkp" secondAttribute="leading" constant="8" id="zSy-i4-MAU"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="pO5-An-AKc" appends="YES" id="iFL-N7-qBb"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="O3M-Md-Awu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="71U-jU-tOL"/>
+                <constraint firstAttribute="trailing" secondItem="quk-Wu-D6l" secondAttribute="trailing" id="BiK-NA-Qcu"/>
+                <constraint firstAttribute="trailing" secondItem="O3M-Md-Awu" secondAttribute="trailing" constant="16" id="CdV-uc-3iO"/>
+                <constraint firstItem="quk-Wu-D6l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JlF-Ob-MMa"/>
+                <constraint firstAttribute="trailing" secondItem="giT-pM-lkp" secondAttribute="trailing" priority="750" constant="16" id="dE5-vZ-Spn"/>
+                <constraint firstItem="NSQ-ei-5oL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="mGd-9A-aXR"/>
+                <constraint firstAttribute="bottom" secondItem="quk-Wu-D6l" secondAttribute="bottom" id="mcb-Pk-73N"/>
+                <constraint firstAttribute="trailing" secondItem="giT-pM-lkp" secondAttribute="trailing" priority="250" constant="96" id="nHE-U1-R13"/>
+                <constraint firstItem="giT-pM-lkp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="250" constant="16" id="wrs-Ce-uTg"/>
+                <constraint firstItem="NSQ-ei-5oL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="x8w-Ga-yAW"/>
+                <constraint firstItem="giT-pM-lkp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xba-8R-u04"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="144.92753623188406" y="63.616071428571423"/>
+        </view>
+        <tapGestureRecognizer id="pO5-An-AKc">
+            <connections>
+                <action selector="tapSearchButton:" destination="-1" id="OjL-HH-Ypd"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
+</document>

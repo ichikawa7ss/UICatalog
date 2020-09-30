@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7591661525187DAE00AFFE41 /* SlideSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591661425187DAE00AFFE41 /* SlideSearchHeaderView.swift */; };
+		7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7591661725187DDB00AFFE41 /* SlideSearchHeaderView.xib */; };
+		7591661A2518A3C200AFFE41 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759166192518A3C200AFFE41 /* BaseView.swift */; };
+		7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591661B2518A3E100AFFE41 /* Bundle+.swift */; };
 		75BCC3EA2511A0930058F73D /* SearchAnimationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */; };
 		75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */; };
 		75BCC3EF2511A3D10058F73D /* UICatalogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7591661425187DAE00AFFE41 /* SlideSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSearchHeaderView.swift; sourceTree = "<group>"; };
+		7591661725187DDB00AFFE41 /* SlideSearchHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideSearchHeaderView.xib; sourceTree = "<group>"; };
+		759166192518A3C200AFFE41 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		7591661B2518A3E100AFFE41 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchAnimationViewController.storyboard; sourceTree = "<group>"; };
 		75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAnimationViewController.swift; sourceTree = "<group>"; };
 		75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogNavigationController.swift; sourceTree = "<group>"; };
@@ -45,9 +53,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7591661325187D9000AFFE41 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				7591661625187DB800AFFE41 /* SlideSearchHeaderView */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		7591661625187DB800AFFE41 /* SlideSearchHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				7591661425187DAE00AFFE41 /* SlideSearchHeaderView.swift */,
+				7591661725187DDB00AFFE41 /* SlideSearchHeaderView.xib */,
+			);
+			path = SlideSearchHeaderView;
+			sourceTree = "<group>";
+		};
 		75BCC3E82511A0750058F73D /* SearchAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				7591661325187D9000AFFE41 /* Parts */,
 				75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */,
 				75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */,
 			);
@@ -123,6 +149,8 @@
 			children = (
 				75F4CFF125117D4300EAF181 /* UIView+.swift */,
 				75F4CFF325117D6800EAF181 /* UIViewController+.swift */,
+				759166192518A3C200AFFE41 /* BaseView.swift */,
+				7591661B2518A3E100AFFE41 /* Bundle+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -188,6 +216,7 @@
 				75BCC3EA2511A0930058F73D /* SearchAnimationViewController.storyboard in Resources */,
 				75F4CFEE25117ACF00EAF181 /* CatalogMenuViewController.storyboard in Resources */,
 				75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */,
+				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
 				75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,7 +233,10 @@
 				75F4CFF425117D6900EAF181 /* UIViewController+.swift in Sources */,
 				75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */,
 				75F4CFEC25117A8B00EAF181 /* CatalogMenuViewController.swift in Sources */,
+				7591661525187DAE00AFFE41 /* SlideSearchHeaderView.swift in Sources */,
+				7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */,
 				75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */,
+				7591661A2518A3C200AFFE41 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
