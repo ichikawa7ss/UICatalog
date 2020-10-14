@@ -14,7 +14,7 @@ final class RegularCollectionLayoutViewController: UIViewController {
         willSet {
             newValue.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
             newValue.register(LinerSmallTableCell.self)
-            newValue.register(RightLargeTableCell.self)
+            newValue.register(LeftLargeTableCell.self)
         }
     }
     
@@ -34,7 +34,7 @@ extension RegularCollectionLayoutViewController: UITableViewDataSource {
             let cell = self.linerSmallTableCell(tableView.dequeueReusableCell(for: indexPath))
             return cell
         } else if num == 1 {
-            let cell = self.rightLargeTableCell(tableView.dequeueReusableCell(for: indexPath))
+            let cell = self.leftLargeTableCell(tableView.dequeueReusableCell(for: indexPath))
             return cell
         } else {
             return UITableViewCell()
@@ -46,7 +46,7 @@ extension RegularCollectionLayoutViewController: UITableViewDataSource {
         return cell
     }
     
-    private func rightLargeTableCell(_ cell: RightLargeTableCell) -> RightLargeTableCell {
+    private func leftLargeTableCell(_ cell: LeftLargeTableCell) -> LeftLargeTableCell {
         // TODO: - Implement
         return cell
     }

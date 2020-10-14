@@ -10,8 +10,8 @@
 		756C5066253690670075498E /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C5065253690670075498E /* UITableView+.swift */; };
 		756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C506D253692BE0075498E /* LinerSmallTableCell.swift */; };
 		756C5070253692BE0075498E /* LinerSmallTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756C506E253692BE0075498E /* LinerSmallTableCell.xib */; };
-		756C5074253694DE0075498E /* RightLargeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C5072253694DE0075498E /* RightLargeTableCell.swift */; };
-		756C5075253694DE0075498E /* RightLargeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756C5073253694DE0075498E /* RightLargeTableCell.xib */; };
+		756C5074253694DE0075498E /* LeftLargeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C5072253694DE0075498E /* LeftLargeTableCell.swift */; };
+		756C5075253694DE0075498E /* LeftLargeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756C5073253694DE0075498E /* LeftLargeTableCell.xib */; };
 		75884F532524197F007050C8 /* RegularCollectionLayoutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75884F522524197F007050C8 /* RegularCollectionLayoutViewController.storyboard */; };
 		75884F5825241ABA007050C8 /* WEARItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75884F5725241ABA007050C8 /* WEARItemView.swift */; };
 		75884F5C25241ACD007050C8 /* WEARItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75884F5B25241ACD007050C8 /* WEARItemView.xib */; };
@@ -38,8 +38,8 @@
 		756C5065253690670075498E /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		756C506D253692BE0075498E /* LinerSmallTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinerSmallTableCell.swift; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.swift; sourceTree = SOURCE_ROOT; };
 		756C506E253692BE0075498E /* LinerSmallTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LinerSmallTableCell.xib; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.xib; sourceTree = SOURCE_ROOT; };
-		756C5072253694DE0075498E /* RightLargeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightLargeTableCell.swift; sourceTree = "<group>"; };
-		756C5073253694DE0075498E /* RightLargeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightLargeTableCell.xib; sourceTree = "<group>"; };
+		756C5072253694DE0075498E /* LeftLargeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftLargeTableCell.swift; sourceTree = "<group>"; };
+		756C5073253694DE0075498E /* LeftLargeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftLargeTableCell.xib; sourceTree = "<group>"; };
 		75884F522524197F007050C8 /* RegularCollectionLayoutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegularCollectionLayoutViewController.storyboard; sourceTree = "<group>"; };
 		75884F5725241ABA007050C8 /* WEARItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEARItemView.swift; sourceTree = "<group>"; };
 		75884F5B25241ACD007050C8 /* WEARItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WEARItemView.xib; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		756C505D25368AFD0075498E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				756C5071253694AC0075498E /* RightLargeTableCell */,
+				756C5071253694AC0075498E /* LeftLargeTableCell */,
 				756C505E25368B090075498E /* SmallCell */,
 			);
 			path = Cell;
@@ -93,13 +93,13 @@
 			path = SmallCell;
 			sourceTree = "<group>";
 		};
-		756C5071253694AC0075498E /* RightLargeTableCell */ = {
+		756C5071253694AC0075498E /* LeftLargeTableCell */ = {
 			isa = PBXGroup;
 			children = (
-				756C5072253694DE0075498E /* RightLargeTableCell.swift */,
-				756C5073253694DE0075498E /* RightLargeTableCell.xib */,
+				756C5072253694DE0075498E /* LeftLargeTableCell.swift */,
+				756C5073253694DE0075498E /* LeftLargeTableCell.xib */,
 			);
-			path = RightLargeTableCell;
+			path = LeftLargeTableCell;
 			sourceTree = "<group>";
 		};
 		75884F4A25241924007050C8 /* RegularCollectionLayout */ = {
@@ -291,7 +291,7 @@
 				75884F5C25241ACD007050C8 /* WEARItemView.xib in Resources */,
 				75F4CFEE25117ACF00EAF181 /* CatalogMenuViewController.storyboard in Resources */,
 				75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */,
-				756C5075253694DE0075498E /* RightLargeTableCell.xib in Resources */,
+				756C5075253694DE0075498E /* LeftLargeTableCell.xib in Resources */,
 				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
 				75884F532524197F007050C8 /* RegularCollectionLayoutViewController.storyboard in Resources */,
 				75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */,
@@ -318,7 +318,7 @@
 				7591661525187DAE00AFFE41 /* SlideSearchHeaderView.swift in Sources */,
 				75884F5825241ABA007050C8 /* WEARItemView.swift in Sources */,
 				7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */,
-				756C5074253694DE0075498E /* RightLargeTableCell.swift in Sources */,
+				756C5074253694DE0075498E /* LeftLargeTableCell.swift in Sources */,
 				75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */,
 				7591661A2518A3C200AFFE41 /* BaseView.swift in Sources */,
 			);
