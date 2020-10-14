@@ -10,15 +10,15 @@ import UIKit
 
 class RightLargeTableCell: UITableViewCell {
 
+    @IBOutlet private weak var rightLargeImageWidth: NSLayoutConstraint!
+    @IBOutlet private weak var leftStackViewWidth: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-}
+        let frameWidth = UIScreen.main.bounds.width - (8 * 2)
+        let unitImageWidth = (frameWidth - 16 ) / 3
+        self.rightLargeImageWidth.constant = unitImageWidth * 2 + 8
+        self.leftStackViewWidth.constant = unitImageWidth
+        
+        self.layoutIfNeeded()
+    }}

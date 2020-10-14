@@ -19,23 +19,24 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-pZ-bxv">
                         <rect key="frame" x="8" y="0.0" width="398" height="332"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="262x332" translatesAutoresizingMaskIntoConstraints="NO" id="ZhY-bJ-exq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZhY-bJ-exq">
                                 <rect key="frame" x="0.0" y="0.0" width="262" height="332"/>
+                                <color key="backgroundColor" red="0.24749882519999999" green="0.55982828139999996" blue="0.96867442130000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="262" id="Pxu-uo-lZq"/>
-                                    <constraint firstAttribute="height" constant="332" id="uEc-WA-HUd"/>
+                                    <constraint firstAttribute="width" secondItem="ZhY-bJ-exq" secondAttribute="height" multiplier="131:166" id="sdi-AQ-GKy"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sfc-QB-bcR">
                                 <rect key="frame" x="270" y="0.0" width="128" height="332"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="128x162" translatesAutoresizingMaskIntoConstraints="NO" id="rmV-Kp-vF4">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmV-Kp-vF4">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="162"/>
-                                        <color key="backgroundColor" red="0.24749882519999999" green="0.55982828139999996" blue="0.96867442130000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="128x162" translatesAutoresizingMaskIntoConstraints="NO" id="HBl-OH-nLK">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HBl-OH-nLK">
                                         <rect key="frame" x="0.0" y="170" width="128" height="162"/>
-                                        <color key="backgroundColor" red="0.24749882519999999" green="0.55982828139999996" blue="0.96867442130000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -53,11 +54,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leftLargeImageWidth" destination="Pxu-uo-lZq" id="CsT-Hq-dj3"/>
+                <outlet property="rightStackViewWidth" destination="osA-EO-dM8" id="5NJ-h7-j0w"/>
+            </connections>
             <point key="canvasLocation" x="24.637681159420293" y="-60.267857142857139"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="128x162" width="128" height="162"/>
-        <image name="262x332" width="262" height="332"/>
-    </resources>
 </document>
