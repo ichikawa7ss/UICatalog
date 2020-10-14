@@ -22,6 +22,8 @@
 		7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7591661725187DDB00AFFE41 /* SlideSearchHeaderView.xib */; };
 		7591661A2518A3C200AFFE41 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759166192518A3C200AFFE41 /* BaseView.swift */; };
 		7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591661B2518A3E100AFFE41 /* Bundle+.swift */; };
+		75B48AD725374344009AAE54 /* RightLargeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B48AD525374344009AAE54 /* RightLargeTableCell.swift */; };
+		75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B48AD625374344009AAE54 /* RightLargeTableCell.xib */; };
 		75BCC3EA2511A0930058F73D /* SearchAnimationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */; };
 		75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */; };
 		75BCC3EF2511A3D10058F73D /* UICatalogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */; };
@@ -50,6 +52,8 @@
 		7591661725187DDB00AFFE41 /* SlideSearchHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideSearchHeaderView.xib; sourceTree = "<group>"; };
 		759166192518A3C200AFFE41 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7591661B2518A3E100AFFE41 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		75B48AD525374344009AAE54 /* RightLargeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightLargeTableCell.swift; sourceTree = "<group>"; };
+		75B48AD625374344009AAE54 /* RightLargeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightLargeTableCell.xib; sourceTree = "<group>"; };
 		75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchAnimationViewController.storyboard; sourceTree = "<group>"; };
 		75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAnimationViewController.swift; sourceTree = "<group>"; };
 		75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogNavigationController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		756C505D25368AFD0075498E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				75B48AD425374303009AAE54 /* RightLargeTableCell */,
 				756C5071253694AC0075498E /* LeftLargeTableCell */,
 				756C505E25368B090075498E /* SmallCell */,
 			);
@@ -139,6 +144,15 @@
 				7591661725187DDB00AFFE41 /* SlideSearchHeaderView.xib */,
 			);
 			path = SlideSearchHeaderView;
+			sourceTree = "<group>";
+		};
+		75B48AD425374303009AAE54 /* RightLargeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				75B48AD525374344009AAE54 /* RightLargeTableCell.swift */,
+				75B48AD625374344009AAE54 /* RightLargeTableCell.xib */,
+			);
+			path = RightLargeTableCell;
 			sourceTree = "<group>";
 		};
 		75BCC3E82511A0750058F73D /* SearchAnimation */ = {
@@ -293,6 +307,7 @@
 				75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */,
 				756C5075253694DE0075498E /* LeftLargeTableCell.xib in Resources */,
 				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
+				75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */,
 				75884F532524197F007050C8 /* RegularCollectionLayoutViewController.storyboard in Resources */,
 				75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */,
 				75884F6725241B7F007050C8 /* WEARItemFooterView.xib in Resources */,
@@ -311,6 +326,7 @@
 				75F4CFF425117D6900EAF181 /* UIViewController+.swift in Sources */,
 				756C5066253690670075498E /* UITableView+.swift in Sources */,
 				756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */,
+				75B48AD725374344009AAE54 /* RightLargeTableCell.swift in Sources */,
 				75884F6325241B5E007050C8 /* WEARItemFooterView.swift in Sources */,
 				75884F6A2524202F007050C8 /* RegularCollectionLayoutViewController.swift in Sources */,
 				75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */,
