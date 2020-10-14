@@ -12,7 +12,9 @@ final class RegularCollectionLayoutViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
+            newValue.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
             newValue.register(LinerSmallTableCell.self)
+            newValue.register(RightLargeTableCell.self)
         }
     }
     
@@ -23,15 +25,28 @@ final class RegularCollectionLayoutViewController: UIViewController {
 
 extension RegularCollectionLayoutViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.linerSmallTableCell(tableView.dequeueReusableCell(for: indexPath))
-        return cell
+        let num = indexPath.row % 3
+        if num == 0 {
+            let cell = self.linerSmallTableCell(tableView.dequeueReusableCell(for: indexPath))
+            return cell
+        } else if num == 1 {
+            let cell = self.rightLargeTableCell(tableView.dequeueReusableCell(for: indexPath))
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     private func linerSmallTableCell(_ cell: LinerSmallTableCell) -> LinerSmallTableCell {
+        // TODO: - Implement
+        return cell
+    }
+    
+    private func rightLargeTableCell(_ cell: RightLargeTableCell) -> RightLargeTableCell {
         // TODO: - Implement
         return cell
     }

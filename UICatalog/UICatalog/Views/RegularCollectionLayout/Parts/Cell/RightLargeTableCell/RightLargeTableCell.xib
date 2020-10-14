@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RightLargeTableCell" customModule="UICatalog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="340"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="340"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-pZ-bxv">
+                        <rect key="frame" x="8" y="0.0" width="398" height="332"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="262x332" translatesAutoresizingMaskIntoConstraints="NO" id="ZhY-bJ-exq">
+                                <rect key="frame" x="0.0" y="0.0" width="262" height="332"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="Pxu-uo-lZq"/>
+                                    <constraint firstAttribute="height" constant="332" id="uEc-WA-HUd"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sfc-QB-bcR">
+                                <rect key="frame" x="270" y="0.0" width="128" height="332"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="128x162" translatesAutoresizingMaskIntoConstraints="NO" id="rmV-Kp-vF4">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="162"/>
+                                        <color key="backgroundColor" red="0.24749882519999999" green="0.55982828139999996" blue="0.96867442130000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="128x162" translatesAutoresizingMaskIntoConstraints="NO" id="HBl-OH-nLK">
+                                        <rect key="frame" x="0.0" y="170" width="128" height="162"/>
+                                        <color key="backgroundColor" red="0.24749882519999999" green="0.55982828139999996" blue="0.96867442130000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="osA-EO-dM8"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BQo-pZ-bxv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QVI-Pw-agW"/>
+                    <constraint firstItem="BQo-pZ-bxv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="qUh-wQ-xma"/>
+                    <constraint firstAttribute="trailing" secondItem="BQo-pZ-bxv" secondAttribute="trailing" constant="8" id="sXg-CO-Ul8"/>
+                    <constraint firstAttribute="bottom" secondItem="BQo-pZ-bxv" secondAttribute="bottom" constant="8" id="urR-p2-yGG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="24.637681159420293" y="-60.267857142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="128x162" width="128" height="162"/>
+        <image name="262x332" width="262" height="332"/>
+    </resources>
+</document>
