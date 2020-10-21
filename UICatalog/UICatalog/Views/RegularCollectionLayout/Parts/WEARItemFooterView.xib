@@ -5,12 +5,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WEARItemFooterView" customModule="UICatalog" customModuleProvider="target">
             <connections>
+                <outlet property="label" destination="Iy3-0c-mhN" id="X14-Xn-dKf"/>
                 <outlet property="profileImageView" destination="vIx-UC-3ma" id="ERg-aW-exE"/>
             </connections>
         </placeholder>
@@ -19,25 +19,36 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-UC-3ma">
-                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-UC-3ma">
+                    <rect key="frame" x="8" y="0.0" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vIx-UC-3ma" secondAttribute="height" multiplier="1:1" id="5bb-3C-scJ"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy3-0c-mhN">
+                    <rect key="frame" x="36" y="3" width="38" height="14"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="YKg-BF-TzN"/>
-            <color key="backgroundColor" systemColor="systemGrayColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vIx-UC-3ma" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Agq-0e-xil"/>
+                <constraint firstItem="Iy3-0c-mhN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HwX-ZK-X6k"/>
+                <constraint firstItem="vIx-UC-3ma" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TnA-k6-AOi"/>
+                <constraint firstItem="Iy3-0c-mhN" firstAttribute="leading" secondItem="vIx-UC-3ma" secondAttribute="trailing" constant="8" id="ZNG-ru-7d3"/>
+                <constraint firstItem="YKg-BF-TzN" firstAttribute="bottom" secondItem="vIx-UC-3ma" secondAttribute="bottom" id="gML-9G-OqZ"/>
+                <constraint firstItem="vIx-UC-3ma" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="rte-dP-SfR"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-13.043478260869566" y="22.767857142857142"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

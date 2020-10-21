@@ -12,7 +12,7 @@ final class LeftLargeTableCell: UITableViewCell {
 
     @IBOutlet private weak var leftLargeImageWidth: NSLayoutConstraint!
     @IBOutlet private weak var rightStackViewWidth: NSLayoutConstraint!
-    @IBOutlet private weak var largeImageView: UIImageView!
+    @IBOutlet private weak var largeItemView: WEARItemView!
     @IBOutlet private weak var smallTopImageView: UIImageView!
     @IBOutlet private weak var smallBottomImageView: UIImageView!
     
@@ -41,7 +41,7 @@ final class LeftLargeTableCell: UITableViewCell {
     
     func configure(cellId: Int) {
         let initalId = cellId * 3 + 1
-        self.largeImageView.loadRandomImage(id: initalId, width: Int(largeImageWidth ?? 0), height: Int(largeImageHeight ?? 0))
+        self.largeItemView.configure(imageId: initalId)
         self.smallTopImageView.loadRandomImage(id: initalId + 1, width: Int(smallImageWidth ?? 0), height: Int(smallImageHeight ?? 0))
         self.smallBottomImageView.loadRandomImage(id: initalId + 2, width: Int(smallImageWidth ?? 0), height: Int(smallImageHeight ?? 0))
     }

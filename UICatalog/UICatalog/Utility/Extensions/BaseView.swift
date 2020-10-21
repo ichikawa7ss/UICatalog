@@ -26,5 +26,6 @@ class BaseView: UIView {
             return
         }
         self.addSubview(view)
+        view.matchParent(self)
     }
 }
