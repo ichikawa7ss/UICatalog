@@ -10,15 +10,29 @@ import UIKit
 
 class LinerSmallTableCell: UITableViewCell {
 
+    @IBOutlet private weak var leftImageView: UIImageView!
+    @IBOutlet private weak var middleImageView: UIImageView!
+    @IBOutlet private weak var lightImageView: UIImageView!
+
+    var imageWidth: CGFloat?
+    var imageHeight: CGFloat?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+        
+        let frameWidth = UIScreen.main.bounds.width - (8 * 2)
+        let unitImageWidth = (frameWidth - 16 ) / 3
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        self.imageWidth = unitImageWidth
+        self.imageHeight = imageWidth!  * 332 / 262
+                
+        self.layoutIfNeeded()
     }
     
+    func configure(cellId: Int) {
+        let initalId = cellId * 3 + 1
+        self.leftImageView.loadRandomImage(id: initalId, width: Int(imageWidth ?? 0), height: Int(imageHeight ?? 0))
+        self.middleImageView.loadRandomImage(id: initalId + 1, width: Int(imageWidth ?? 0), height: Int(imageHeight ?? 0))
+        self.lightImageView.loadRandomImage(id: initalId + 2, width: Int(imageWidth ?? 0), height: Int(imageHeight ?? 0))
+    }
 }

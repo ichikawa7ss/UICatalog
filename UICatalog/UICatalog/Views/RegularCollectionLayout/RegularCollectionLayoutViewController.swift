@@ -32,31 +32,31 @@ extension RegularCollectionLayoutViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let num = indexPath.row % 4
         if num == 0 || num == 2 {
-            let cell = self.linerSmallTableCell(tableView.dequeueReusableCell(for: indexPath))
+            let cell = self.linerSmallTableCell(tableView.dequeueReusableCell(for: indexPath), cellId: indexPath.row)
             return cell
         } else if num == 1 {
-            let cell = self.leftLargeTableCell(tableView.dequeueReusableCell(for: indexPath))
+            let cell = self.leftLargeTableCell(tableView.dequeueReusableCell(for: indexPath), cellId: indexPath.row)
             return cell
         } else if num == 3 {
-            let cell = self.rightLargeTableCell(tableView.dequeueReusableCell(for: indexPath))
+            let cell = self.rightLargeTableCell(tableView.dequeueReusableCell(for: indexPath), cellId: indexPath.row)
             return cell
         } else {
             return UITableViewCell()
         }
     }
     
-    private func linerSmallTableCell(_ cell: LinerSmallTableCell) -> LinerSmallTableCell {
-        // TODO: - Implement
+    private func linerSmallTableCell(_ cell: LinerSmallTableCell, cellId: Int) -> LinerSmallTableCell {
+        cell.configure(cellId: cellId)
         return cell
     }
     
-    private func leftLargeTableCell(_ cell: LeftLargeTableCell) -> LeftLargeTableCell {
-        // TODO: - Implement
+    private func leftLargeTableCell(_ cell: LeftLargeTableCell, cellId: Int) -> LeftLargeTableCell {
+        cell.configure(cellId: cellId)
         return cell
     }
     
-    private func rightLargeTableCell(_ cell: RightLargeTableCell) -> RightLargeTableCell {
-        // TODO: - Implement
+    private func rightLargeTableCell(_ cell: RightLargeTableCell, cellId: Int) -> RightLargeTableCell {
+        cell.configure(cellId: cellId)
         return cell
     }
 }
