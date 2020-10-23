@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,25 +21,25 @@
                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zb4-Bj-fzW">
                         <rect key="frame" x="8" y="0.0" width="398" height="162"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOw-ia-Fiu">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-if-1Nc" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="127.5" height="162"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="GOw-ia-Fiu" secondAttribute="height" multiplier="262:332" id="9Z2-Rt-FAu"/>
+                                    <constraint firstAttribute="width" secondItem="Vpa-if-1Nc" secondAttribute="height" multiplier="262:332" id="gah-67-ip9"/>
                                 </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6X-KS-z6N">
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWh-fe-nMO" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
                                 <rect key="frame" x="135.5" y="0.0" width="127" height="162"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CoF-HI-67r">
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72i-HS-k01" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
                                 <rect key="frame" x="270.5" y="0.0" width="127.5" height="162"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="G6X-KS-z6N" firstAttribute="height" secondItem="GOw-ia-Fiu" secondAttribute="height" id="RO9-dM-9ki"/>
-                            <constraint firstItem="CoF-HI-67r" firstAttribute="height" secondItem="GOw-ia-Fiu" secondAttribute="height" id="sKo-SN-vVB"/>
+                            <constraint firstItem="72i-HS-k01" firstAttribute="height" secondItem="Vpa-if-1Nc" secondAttribute="height" id="AjH-Q7-loq"/>
+                            <constraint firstItem="EWh-fe-nMO" firstAttribute="height" secondItem="Vpa-if-1Nc" secondAttribute="height" id="SWq-5a-waH"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -51,11 +52,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="leftImageView" destination="GOw-ia-Fiu" id="JtS-nS-Q6r"/>
-                <outlet property="lightImageView" destination="CoF-HI-67r" id="C4m-TW-rzG"/>
-                <outlet property="middleImageView" destination="G6X-KS-z6N" id="Q9D-cy-iU3"/>
+                <outlet property="leftItemView" destination="Vpa-if-1Nc" id="ikV-34-Jp0"/>
+                <outlet property="middleItemView" destination="EWh-fe-nMO" id="2Qc-3U-qZo"/>
+                <outlet property="rightItemView" destination="72i-HS-k01" id="qJK-LL-bFZ"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="86.383928571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -10,11 +10,11 @@ import UIKit
 
 class RightLargeTableCell: UITableViewCell {
 
-    @IBOutlet private weak var rightLargeImageWidth: NSLayoutConstraint!
+    @IBOutlet private weak var rightLargeItemWidth: NSLayoutConstraint!
     @IBOutlet private weak var leftStackViewWidth: NSLayoutConstraint!
-    @IBOutlet private weak var largeImageView: UIImageView!
-    @IBOutlet private weak var smallTopImageView: UIImageView!
-    @IBOutlet private weak var smallBottomImageView: UIImageView!
+    @IBOutlet private weak var largeItemView: WEARItemView!
+    @IBOutlet private weak var smallTopItemView: WEARItemView!
+    @IBOutlet private weak var smallBottomItemView: WEARItemView!
     
     var smallImageWidth: CGFloat?
     var smallImageHeight: CGFloat?
@@ -28,7 +28,7 @@ class RightLargeTableCell: UITableViewCell {
         let frameWidth = UIScreen.main.bounds.width - (8 * 2)
         let unitImageWidth = (frameWidth - 16 ) / 3
         
-        self.rightLargeImageWidth.constant = unitImageWidth * 2 + 8
+        self.rightLargeItemWidth.constant = unitImageWidth * 2 + 8
         self.leftStackViewWidth.constant = unitImageWidth
         
         self.smallImageWidth = unitImageWidth
@@ -42,8 +42,8 @@ class RightLargeTableCell: UITableViewCell {
     
     func configure(cellId: Int) {
         let initalId = cellId * 3 + 1
-        self.smallTopImageView.loadRandomImage(id: initalId, width: Int(largeImageWidth ?? 0), height: Int(largeImageHeight ?? 0))
-        self.smallBottomImageView.loadRandomImage(id: initalId + 1, width: Int(smallImageWidth ?? 0), height: Int(smallImageHeight ?? 0))
-        self.largeImageView.loadRandomImage(id: initalId + 2, width: Int(smallImageWidth ?? 0), height: Int(smallImageHeight ?? 0))
+        self.smallTopItemView.configure(imageId: initalId)
+        self.smallBottomItemView.configure(imageId: initalId + 1)
+        self.largeItemView.configure(imageId: initalId + 2)
     }
 }

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,7 +21,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8b-3o-dBd" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="262" height="332"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="262" id="A0T-cD-V4i"/>
                                     <constraint firstAttribute="width" secondItem="s8b-3o-dBd" secondAttribute="height" multiplier="131:166" id="rS4-kt-vu1"/>
@@ -32,14 +30,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sfc-QB-bcR">
                                 <rect key="frame" x="270" y="0.0" width="128" height="332"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmV-Kp-vF4">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSo-NF-R1m" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="162"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HBl-OH-nLK">
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZD-Gn-kJu" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="170" width="128" height="162"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="osA-EO-dM8"/>
@@ -58,17 +56,12 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="largeItemView" destination="s8b-3o-dBd" id="OdR-1p-dS8"/>
-                <outlet property="leftLargeImageWidth" destination="A0T-cD-V4i" id="0BU-gh-Swg"/>
+                <outlet property="leftLargeItemWidth" destination="A0T-cD-V4i" id="bVN-Sb-8yg"/>
                 <outlet property="rightStackViewWidth" destination="osA-EO-dM8" id="5NJ-h7-j0w"/>
-                <outlet property="smallBottomImageView" destination="HBl-OH-nLK" id="A1Z-th-20a"/>
-                <outlet property="smallTopImageView" destination="rmV-Kp-vF4" id="Jc2-jy-Ija"/>
+                <outlet property="smallBottomItemView" destination="DZD-Gn-kJu" id="5i2-8b-sdX"/>
+                <outlet property="smallTopItemView" destination="JSo-NF-R1m" id="jQL-jk-AxF"/>
             </connections>
             <point key="canvasLocation" x="24.637681159420293" y="-60.267857142857139"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -10,9 +10,9 @@ import UIKit
 
 class LinerSmallTableCell: UITableViewCell {
 
-    @IBOutlet private weak var leftImageView: UIImageView!
-    @IBOutlet private weak var middleImageView: UIImageView!
-    @IBOutlet private weak var lightImageView: UIImageView!
+    @IBOutlet private weak var leftItemView: WEARItemView!
+    @IBOutlet private weak var middleItemView: WEARItemView!
+    @IBOutlet private weak var rightItemView: WEARItemView!
 
     var imageWidth: CGFloat?
     var imageHeight: CGFloat?
@@ -31,8 +31,8 @@ class LinerSmallTableCell: UITableViewCell {
     
     func configure(cellId: Int) {
         let initalId = cellId * 3 + 1
-        self.leftImageView.loadRandomImage(id: initalId, width: Int(imageWidth ?? 0), height: Int(imageHeight ?? 0))
-        self.middleImageView.loadRandomImage(id: initalId + 1, width: Int(imageWidth ?? 0), height: Int(imageHeight ?? 0))
-        self.lightImageView.loadRandomImage(id: initalId + 2, width: Int(imageWidth ?? 0), height: Int(imageHeight ?? 0))
+        self.leftItemView.configure(imageId: initalId)
+        self.middleItemView.configure(imageId: initalId + 1)
+        self.rightItemView.configure(imageId: initalId + 2)
     }
 }
