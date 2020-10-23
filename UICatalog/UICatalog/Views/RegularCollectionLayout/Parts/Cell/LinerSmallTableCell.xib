@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LinerSmallTableCell" customModule="UICatalog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zb4-Bj-fzW">
+                        <rect key="frame" x="8" y="0.0" width="398" height="162"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-if-1Nc" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="162"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vpa-if-1Nc" secondAttribute="height" multiplier="262:332" id="gah-67-ip9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWh-fe-nMO" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
+                                <rect key="frame" x="135.5" y="0.0" width="127" height="162"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72i-HS-k01" customClass="WEARItemView" customModule="UICatalog" customModuleProvider="target">
+                                <rect key="frame" x="270.5" y="0.0" width="127.5" height="162"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="72i-HS-k01" firstAttribute="height" secondItem="Vpa-if-1Nc" secondAttribute="height" id="AjH-Q7-loq"/>
+                            <constraint firstItem="EWh-fe-nMO" firstAttribute="height" secondItem="Vpa-if-1Nc" secondAttribute="height" id="SWq-5a-waH"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Zb4-Bj-fzW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0t3-zo-yVb"/>
+                    <constraint firstAttribute="bottom" secondItem="Zb4-Bj-fzW" secondAttribute="bottom" constant="8" id="15h-nx-OLv"/>
+                    <constraint firstItem="Zb4-Bj-fzW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Gce-OA-lPs"/>
+                    <constraint firstAttribute="trailing" secondItem="Zb4-Bj-fzW" secondAttribute="trailing" constant="8" id="RFr-RK-E7v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leftItemView" destination="Vpa-if-1Nc" id="ikV-34-Jp0"/>
+                <outlet property="middleItemView" destination="EWh-fe-nMO" id="2Qc-3U-qZo"/>
+                <outlet property="rightItemView" destination="72i-HS-k01" id="qJK-LL-bFZ"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="86.383928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

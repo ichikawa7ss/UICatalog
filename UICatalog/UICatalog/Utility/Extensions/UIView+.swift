@@ -66,4 +66,20 @@ extension UIView {
             layer.cornerRadius = newValue
         }
     }
+    
+    func matchParent(_ parent: UIView, isEnableSafe: Bool = false, padding: UIEdgeInsets = .zero) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        if isEnableSafe, #available(iOS 11.0, *) {
+            self.topAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.topAnchor, constant: padding.top).isActive = true
+            self.leadingAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.leadingAnchor, constant: padding.left).isActive = true
+            self.trailingAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.trailingAnchor, constant: padding.right).isActive = true
+            self.bottomAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.bottomAnchor, constant: padding.bottom).isActive = true
+        }
+        else {
+            self.topAnchor.constraint(equalTo: parent.topAnchor, constant: padding.top).isActive = true
+            self.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: padding.left).isActive = true
+            self.trailingAnchor.constraint(equalTo: parent.trailingAnchor, constant: padding.right).isActive = true
+            self.bottomAnchor.constraint(equalTo: parent.bottomAnchor, constant: padding.bottom).isActive = true
+        }
+    }
 }
