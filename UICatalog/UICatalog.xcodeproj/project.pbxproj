@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		554E02ED3E5EDBDBCE4CE5E4 /* Pods_UICatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3702A40F5AE7B1EC0D455FF /* Pods_UICatalog.framework */; };
+		7516D5712549040C005A4F50 /* IrregularCollectionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7516D56F2549040C005A4F50 /* IrregularCollectionLayoutViewController.swift */; };
+		7516D57625490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7516D57525490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard */; };
 		756C5066253690670075498E /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C5065253690670075498E /* UITableView+.swift */; };
 		756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C506D253692BE0075498E /* LinerSmallTableCell.swift */; };
 		756C5070253692BE0075498E /* LinerSmallTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756C506E253692BE0075498E /* LinerSmallTableCell.xib */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		3FA106CAE5F5A7CE20BF678C /* Pods-UICatalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICatalog.release.xcconfig"; path = "Target Support Files/Pods-UICatalog/Pods-UICatalog.release.xcconfig"; sourceTree = "<group>"; };
 		6F28B0CAE1C89123FAD2F5F6 /* Pods-UICatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICatalog.debug.xcconfig"; path = "Target Support Files/Pods-UICatalog/Pods-UICatalog.debug.xcconfig"; sourceTree = "<group>"; };
+		7516D56F2549040C005A4F50 /* IrregularCollectionLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionLayoutViewController.swift; sourceTree = "<group>"; };
+		7516D57525490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IrregularCollectionLayoutViewController.storyboard; sourceTree = "<group>"; };
 		756C5065253690670075498E /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		756C506D253692BE0075498E /* LinerSmallTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinerSmallTableCell.swift; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.swift; sourceTree = SOURCE_ROOT; };
 		756C506E253692BE0075498E /* LinerSmallTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LinerSmallTableCell.xib; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.xib; sourceTree = SOURCE_ROOT; };
@@ -86,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7516D56E254903E6005A4F50 /* IrregularCollectionLayout */ = {
+			isa = PBXGroup;
+			children = (
+				7516D56F2549040C005A4F50 /* IrregularCollectionLayoutViewController.swift */,
+				7516D57525490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard */,
+			);
+			path = IrregularCollectionLayout;
+			sourceTree = "<group>";
+		};
 		756C505D25368AFD0075498E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +227,7 @@
 		75F4CFE925117A3D00EAF181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7516D56E254903E6005A4F50 /* IrregularCollectionLayout */,
 				75884F4A25241924007050C8 /* RegularCollectionLayout */,
 				75BCC3ED2511A3BA0058F73D /* NavigationController */,
 				75BCC3E82511A0750058F73D /* SearchAnimation */,
@@ -336,6 +350,7 @@
 				75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */,
 				756C5075253694DE0075498E /* LeftLargeTableCell.xib in Resources */,
 				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
+				7516D57625490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard in Resources */,
 				75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */,
 				75884F532524197F007050C8 /* RegularCollectionLayoutViewController.storyboard in Resources */,
 				75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */,
@@ -400,6 +415,7 @@
 				75B48AD725374344009AAE54 /* RightLargeTableCell.swift in Sources */,
 				75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */,
 				75884F6325241B5E007050C8 /* WEARItemFooterView.swift in Sources */,
+				7516D5712549040C005A4F50 /* IrregularCollectionLayoutViewController.swift in Sources */,
 				75884F6A2524202F007050C8 /* RegularCollectionLayoutViewController.swift in Sources */,
 				75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */,
 				75F4CFEC25117A8B00EAF181 /* CatalogMenuViewController.swift in Sources */,
