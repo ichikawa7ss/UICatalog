@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		554E02ED3E5EDBDBCE4CE5E4 /* Pods_UICatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3702A40F5AE7B1EC0D455FF /* Pods_UICatalog.framework */; };
+		750068E12552374A0071F39E /* IrregularCollectionContentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750068E02552374A0071F39E /* IrregularCollectionContentsModel.swift */; };
 		7516D5712549040C005A4F50 /* IrregularCollectionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7516D56F2549040C005A4F50 /* IrregularCollectionLayoutViewController.swift */; };
 		7516D57625490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7516D57525490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard */; };
 		7516D57C254908A1005A4F50 /* IrregularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7516D57A254908A1005A4F50 /* IrregularCollectionViewCell.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		3FA106CAE5F5A7CE20BF678C /* Pods-UICatalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICatalog.release.xcconfig"; path = "Target Support Files/Pods-UICatalog/Pods-UICatalog.release.xcconfig"; sourceTree = "<group>"; };
 		6F28B0CAE1C89123FAD2F5F6 /* Pods-UICatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICatalog.debug.xcconfig"; path = "Target Support Files/Pods-UICatalog/Pods-UICatalog.debug.xcconfig"; sourceTree = "<group>"; };
+		750068E02552374A0071F39E /* IrregularCollectionContentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionContentsModel.swift; sourceTree = "<group>"; };
 		7516D56F2549040C005A4F50 /* IrregularCollectionLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionLayoutViewController.swift; sourceTree = "<group>"; };
 		7516D57525490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IrregularCollectionLayoutViewController.storyboard; sourceTree = "<group>"; };
 		7516D57A254908A1005A4F50 /* IrregularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				7516D57825490867005A4F50 /* Parts */,
 				7516D56F2549040C005A4F50 /* IrregularCollectionLayoutViewController.swift */,
 				7516D57525490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard */,
+				750068E02552374A0071F39E /* IrregularCollectionContentsModel.swift */,
 			);
 			path = IrregularCollectionLayout;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				7591661525187DAE00AFFE41 /* SlideSearchHeaderView.swift in Sources */,
 				7516D58125490F0A005A4F50 /* UICollectionView+.swift in Sources */,
 				75884F5825241ABA007050C8 /* WEARItemView.swift in Sources */,
+				750068E12552374A0071F39E /* IrregularCollectionContentsModel.swift in Sources */,
 				7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */,
 				756C5074253694DE0075498E /* LeftLargeTableCell.swift in Sources */,
 				75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */,
