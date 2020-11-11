@@ -35,6 +35,7 @@
 		75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */; };
 		75BCC3EF2511A3D10058F73D /* UICatalogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */; };
 		75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DEA7B0253754EA00439EC8 /* UIImageView+.swift */; };
+		75EEC570255B791600CFCB3A /* IrregularCollectionVewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */; };
 		75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CFD5251178D000EAF181 /* AppDelegate.swift */; };
 		75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F4CFDE251178D200EAF181 /* Assets.xcassets */; };
 		75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F4CFE0251178D200EAF181 /* LaunchScreen.storyboard */; };
@@ -74,6 +75,7 @@
 		75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAnimationViewController.swift; sourceTree = "<group>"; };
 		75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogNavigationController.swift; sourceTree = "<group>"; };
 		75DEA7B0253754EA00439EC8 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionVewLayout.swift; sourceTree = "<group>"; };
 		75F4CFD2251178D000EAF181 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F4CFD5251178D000EAF181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75F4CFDE251178D200EAF181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				7516D56F2549040C005A4F50 /* IrregularCollectionLayoutViewController.swift */,
 				7516D57525490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard */,
 				750068E02552374A0071F39E /* IrregularCollectionContentsModel.swift */,
+				75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */,
 			);
 			path = IrregularCollectionLayout;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				75884F6325241B5E007050C8 /* WEARItemFooterView.swift in Sources */,
 				7516D5712549040C005A4F50 /* IrregularCollectionLayoutViewController.swift in Sources */,
 				75884F6A2524202F007050C8 /* RegularCollectionLayoutViewController.swift in Sources */,
+				75EEC570255B791600CFCB3A /* IrregularCollectionVewLayout.swift in Sources */,
 				75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */,
 				7516D57C254908A1005A4F50 /* IrregularCollectionViewCell.swift in Sources */,
 				75F4CFEC25117A8B00EAF181 /* CatalogMenuViewController.swift in Sources */,
