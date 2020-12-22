@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		554E02ED3E5EDBDBCE4CE5E4 /* Pods_UICatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3702A40F5AE7B1EC0D455FF /* Pods_UICatalog.framework */; };
+		753EA84F2591709700267229 /* SwitchableRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA84E2591709700267229 /* SwitchableRootViewController.swift */; };
+		753EA851259170CC00267229 /* SwitchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA850259170CC00267229 /* SwitchButtonView.swift */; };
+		753EA853259170F600267229 /* SwitchButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753EA852259170F600267229 /* SwitchButtonView.xib */; };
+		753EA8552591712D00267229 /* SwitchableRootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753EA8542591712D00267229 /* SwitchableRootViewController.storyboard */; };
+		753EA859259171DD00267229 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA858259171DD00267229 /* HomeViewController.swift */; };
+		753EA85B259171F000267229 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753EA85A259171F000267229 /* HomeViewController.storyboard */; };
+		753EA85D2591722D00267229 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA85C2591722D00267229 /* SearchViewController.swift */; };
+		753EA85F2591724A00267229 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753EA85E2591724A00267229 /* SearchViewController.storyboard */; };
 		756C5066253690670075498E /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C5065253690670075498E /* UITableView+.swift */; };
 		756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C506D253692BE0075498E /* LinerSmallTableCell.swift */; };
 		756C5070253692BE0075498E /* LinerSmallTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756C506E253692BE0075498E /* LinerSmallTableCell.xib */; };
@@ -41,6 +49,14 @@
 /* Begin PBXFileReference section */
 		3FA106CAE5F5A7CE20BF678C /* Pods-UICatalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICatalog.release.xcconfig"; path = "Target Support Files/Pods-UICatalog/Pods-UICatalog.release.xcconfig"; sourceTree = "<group>"; };
 		6F28B0CAE1C89123FAD2F5F6 /* Pods-UICatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICatalog.debug.xcconfig"; path = "Target Support Files/Pods-UICatalog/Pods-UICatalog.debug.xcconfig"; sourceTree = "<group>"; };
+		753EA84E2591709700267229 /* SwitchableRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchableRootViewController.swift; sourceTree = "<group>"; };
+		753EA850259170CC00267229 /* SwitchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButtonView.swift; sourceTree = "<group>"; };
+		753EA852259170F600267229 /* SwitchButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchButtonView.xib; sourceTree = "<group>"; };
+		753EA8542591712D00267229 /* SwitchableRootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwitchableRootViewController.storyboard; sourceTree = "<group>"; };
+		753EA858259171DD00267229 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		753EA85A259171F000267229 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		753EA85C2591722D00267229 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		753EA85E2591724A00267229 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		756C5065253690670075498E /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		756C506D253692BE0075498E /* LinerSmallTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinerSmallTableCell.swift; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.swift; sourceTree = SOURCE_ROOT; };
 		756C506E253692BE0075498E /* LinerSmallTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LinerSmallTableCell.xib; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.xib; sourceTree = SOURCE_ROOT; };
@@ -86,6 +102,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		753EA8492591703200267229 /* SwichableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				753EA84A2591704900267229 /* Root */,
+			);
+			path = SwichableViewController;
+			sourceTree = "<group>";
+		};
+		753EA84A2591704900267229 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				753EA84D2591706B00267229 /* Child */,
+				753EA84C2591706500267229 /* Parts */,
+				753EA84E2591709700267229 /* SwitchableRootViewController.swift */,
+				753EA8542591712D00267229 /* SwitchableRootViewController.storyboard */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		753EA84C2591706500267229 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				753EA850259170CC00267229 /* SwitchButtonView.swift */,
+				753EA852259170F600267229 /* SwitchButtonView.xib */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		753EA84D2591706B00267229 /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				753EA857259171C200267229 /* Search */,
+				753EA856259171BD00267229 /* Home */,
+			);
+			path = Child;
+			sourceTree = "<group>";
+		};
+		753EA856259171BD00267229 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				753EA858259171DD00267229 /* HomeViewController.swift */,
+				753EA85A259171F000267229 /* HomeViewController.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		753EA857259171C200267229 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				753EA85C2591722D00267229 /* SearchViewController.swift */,
+				753EA85E2591724A00267229 /* SearchViewController.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		756C505D25368AFD0075498E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +285,7 @@
 		75F4CFE925117A3D00EAF181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				753EA8492591703200267229 /* SwichableViewController */,
 				75884F4A25241924007050C8 /* RegularCollectionLayout */,
 				75BCC3ED2511A3BA0058F73D /* NavigationController */,
 				75BCC3E82511A0750058F73D /* SearchAnimation */,
@@ -331,10 +403,14 @@
 			files = (
 				75BCC3EA2511A0930058F73D /* SearchAnimationViewController.storyboard in Resources */,
 				756C5070253692BE0075498E /* LinerSmallTableCell.xib in Resources */,
+				753EA85B259171F000267229 /* HomeViewController.storyboard in Resources */,
 				75884F5C25241ACD007050C8 /* WEARItemView.xib in Resources */,
 				75F4CFEE25117ACF00EAF181 /* CatalogMenuViewController.storyboard in Resources */,
+				753EA8552591712D00267229 /* SwitchableRootViewController.storyboard in Resources */,
 				75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */,
 				756C5075253694DE0075498E /* LeftLargeTableCell.xib in Resources */,
+				753EA85F2591724A00267229 /* SearchViewController.storyboard in Resources */,
+				753EA853259170F600267229 /* SwitchButtonView.xib in Resources */,
 				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
 				75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */,
 				75884F532524197F007050C8 /* RegularCollectionLayoutViewController.storyboard in Resources */,
@@ -401,12 +477,16 @@
 				75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */,
 				75884F6325241B5E007050C8 /* WEARItemFooterView.swift in Sources */,
 				75884F6A2524202F007050C8 /* RegularCollectionLayoutViewController.swift in Sources */,
+				753EA84F2591709700267229 /* SwitchableRootViewController.swift in Sources */,
 				75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */,
 				75F4CFEC25117A8B00EAF181 /* CatalogMenuViewController.swift in Sources */,
 				7591661525187DAE00AFFE41 /* SlideSearchHeaderView.swift in Sources */,
 				75884F5825241ABA007050C8 /* WEARItemView.swift in Sources */,
 				7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */,
+				753EA85D2591722D00267229 /* SearchViewController.swift in Sources */,
+				753EA859259171DD00267229 /* HomeViewController.swift in Sources */,
 				756C5074253694DE0075498E /* LeftLargeTableCell.swift in Sources */,
+				753EA851259170CC00267229 /* SwitchButtonView.swift in Sources */,
 				75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */,
 				7591661A2518A3C200AFFE41 /* BaseView.swift in Sources */,
 			);
