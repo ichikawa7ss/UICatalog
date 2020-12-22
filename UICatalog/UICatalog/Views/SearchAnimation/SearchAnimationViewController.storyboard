@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dc1-Cj-dcP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dc1-Cj-dcP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -34,8 +34,8 @@
                                     <constraint firstAttribute="bottom" secondItem="Aoa-HV-9M6" secondAttribute="bottom" id="sIJ-CF-DMu"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileView" translatesAutoresizingMaskIntoConstraints="NO" id="5hY-Dz-uHd">
-                                <rect key="frame" x="0.0" y="96" width="414" height="766"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileView" translatesAutoresizingMaskIntoConstraints="NO" id="5hY-Dz-uHd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdN-1M-59i">
                                 <rect key="frame" x="350" y="798" width="48" height="48"/>
@@ -54,8 +54,8 @@
                             <constraint firstItem="5hY-Dz-uHd" firstAttribute="leading" secondItem="Ei5-fU-EO3" secondAttribute="leading" id="3Js-PN-te0"/>
                             <constraint firstAttribute="trailing" secondItem="xdN-1M-59i" secondAttribute="trailing" constant="16" id="3zK-zg-pv5"/>
                             <constraint firstItem="Ei5-fU-EO3" firstAttribute="trailing" secondItem="iZ1-1z-sVb" secondAttribute="trailing" id="5Uh-Jc-NdU"/>
-                            <constraint firstItem="Ei5-fU-EO3" firstAttribute="bottom" secondItem="5hY-Dz-uHd" secondAttribute="bottom" id="KXi-Lj-0hv"/>
-                            <constraint firstItem="5hY-Dz-uHd" firstAttribute="top" secondItem="iZ1-1z-sVb" secondAttribute="bottom" constant="8" id="RE1-yF-kk6"/>
+                            <constraint firstAttribute="bottom" secondItem="5hY-Dz-uHd" secondAttribute="bottom" id="KXi-Lj-0hv"/>
+                            <constraint firstItem="5hY-Dz-uHd" firstAttribute="top" secondItem="iZ1-1z-sVb" secondAttribute="bottom" id="RE1-yF-kk6"/>
                             <constraint firstItem="iZ1-1z-sVb" firstAttribute="top" secondItem="BsO-nm-xwH" secondAttribute="top" id="hOe-7U-nU6"/>
                             <constraint firstItem="Ei5-fU-EO3" firstAttribute="bottom" secondItem="xdN-1M-59i" secondAttribute="bottom" constant="16" id="ny7-mX-MYF"/>
                             <constraint firstItem="iZ1-1z-sVb" firstAttribute="leading" secondItem="Ei5-fU-EO3" secondAttribute="leading" id="u25-Ob-oM1"/>
