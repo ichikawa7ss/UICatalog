@@ -34,6 +34,7 @@
 		75BCC3EA2511A0930058F73D /* SearchAnimationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */; };
 		75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */; };
 		75BCC3EF2511A3D10058F73D /* UICatalogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */; };
+		75D14179256DEEAF00823BCB /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D14178256DEEAF00823BCB /* Array+.swift */; };
 		75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DEA7B0253754EA00439EC8 /* UIImageView+.swift */; };
 		75EEC570255B791600CFCB3A /* IrregularCollectionVewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */; };
 		75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CFD5251178D000EAF181 /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 		75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchAnimationViewController.storyboard; sourceTree = "<group>"; };
 		75BCC3EB2511A1AE0058F73D /* SearchAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAnimationViewController.swift; sourceTree = "<group>"; };
 		75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogNavigationController.swift; sourceTree = "<group>"; };
+		75D14178256DEEAF00823BCB /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		75DEA7B0253754EA00439EC8 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionVewLayout.swift; sourceTree = "<group>"; };
 		75F4CFD2251178D000EAF181 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +295,7 @@
 				756C5065253690670075498E /* UITableView+.swift */,
 				75DEA7B0253754EA00439EC8 /* UIImageView+.swift */,
 				7516D58025490F0A005A4F50 /* UICollectionView+.swift */,
+				75D14178256DEEAF00823BCB /* Array+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			files = (
 				75F4CFF225117D4300EAF181 /* UIView+.swift in Sources */,
 				75BCC3EF2511A3D10058F73D /* UICatalogNavigationController.swift in Sources */,
+				75D14179256DEEAF00823BCB /* Array+.swift in Sources */,
 				75F4CFF425117D6900EAF181 /* UIViewController+.swift in Sources */,
 				756C5066253690670075498E /* UITableView+.swift in Sources */,
 				756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */,
