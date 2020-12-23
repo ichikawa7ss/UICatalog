@@ -40,13 +40,13 @@ extension CatalogMenuViewController: UITableViewDelegate {
         case .searchAnimation:
             let vc = SearchAnimationViewController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
-        case .switchableViewController:
-            let vc = SwitchableRootViewController.instantiate()
-            vc.chiledViewControllers = [
-                HomeViewController.instantiate(),
-                SearchViewController.instantiate()
-            ]
-            self.navigationController?.pushViewController(vc, animated: true)
+//        case .switchableViewController:
+//            let vc = SwitchableRootViewController.instantiate()
+//            vc.chiledViewControllers = [
+//                HomeViewController.instantiate(),
+//                SearchViewController.instantiate()
+//            ]
+//            self.navigationController?.pushViewController(vc, animated: true)
         case .regularCollectionLayout:
             let vc = RegularCollectionLayoutViewController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
@@ -57,15 +57,15 @@ extension CatalogMenuViewController: UITableViewDelegate {
 enum UIMenu: Int, CaseIterable {
     
     case searchAnimation
-    case switchableViewController
+//    case switchableViewController
     case regularCollectionLayout
     
     var title: String {
         switch self {
         case .searchAnimation:
             return "Search Animation like facebook"
-        case .switchableViewController:
-            return "Switching ViewController animation"
+//        case .switchableViewController:
+//            return "Switching ViewController animation"
         case .regularCollectionLayout:
             return "Regular Collection Layout like WEAR"
         }
