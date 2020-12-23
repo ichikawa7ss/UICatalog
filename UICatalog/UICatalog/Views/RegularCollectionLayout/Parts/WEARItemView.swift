@@ -18,4 +18,10 @@ final class WEARItemView: BaseView {
         let footerImageId = imageId + 100
         self.footerView.configure(imageId: footerImageId)
     }
+    
+    func configure(imageId: Int, width: Int, height: Int) {
+        self.itemImageView.loadRandomImage(id: imageId, width: width, height: height - 28)
+        let footerImageId = imageId + 100
+        self.footerView.configure(imageId: footerImageId)
+    }
 }
