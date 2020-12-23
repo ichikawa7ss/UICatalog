@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwitchButtonView" customModule="SwitchableViewController" customModuleProvider="target">
+            <connections>
+                <outlet property="toHomeButtonView" destination="OZR-L7-HhQ" id="Ifq-ne-Kcc"/>
+                <outlet property="toSearchButtonView" destination="3WB-Ym-zFQ" id="1d8-oG-2gb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WB-Ym-zFQ">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0ZQ-1K-3GV">
+                            <rect key="frame" x="8" y="9" width="34" height="32"/>
+                            <color key="tintColor" red="0.96924716229999996" green="0.064876057210000004" blue="0.078770600260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96231049300000004" green="0.9324773663" blue="0.45437426780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="0ZQ-1K-3GV" firstAttribute="leading" secondItem="3WB-Ym-zFQ" secondAttribute="leading" constant="8" id="XU8-2M-kG5"/>
+                        <constraint firstItem="0ZQ-1K-3GV" firstAttribute="top" secondItem="3WB-Ym-zFQ" secondAttribute="top" constant="8" id="YTx-Fr-1at"/>
+                        <constraint firstAttribute="bottom" secondItem="0ZQ-1K-3GV" secondAttribute="bottom" constant="8" id="ZYf-Bk-xso"/>
+                        <constraint firstAttribute="trailing" secondItem="0ZQ-1K-3GV" secondAttribute="trailing" constant="8" id="dfi-pc-EJW"/>
+                        <constraint firstAttribute="width" constant="50" id="hwS-c5-wlf"/>
+                        <constraint firstAttribute="height" constant="50" id="x86-Sc-4zX"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.98737925289999995" green="0.83241838219999997" blue="0.13642343879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZR-L7-HhQ">
+                    <rect key="frame" x="100" y="100" width="50" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7v0-Di-gAy">
+                            <rect key="frame" x="8" y="7.5" width="34" height="33.5"/>
+                            <color key="tintColor" red="0.96924716229999996" green="0.064876057210000004" blue="0.078770600260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96231049300000004" green="0.9324773663" blue="0.45437426780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="7v0-Di-gAy" secondAttribute="bottom" constant="8" id="H3a-gd-Pqs"/>
+                        <constraint firstAttribute="height" constant="50" id="NfY-Zt-rwf"/>
+                        <constraint firstItem="7v0-Di-gAy" firstAttribute="top" secondItem="OZR-L7-HhQ" secondAttribute="top" constant="8" id="OQf-Mg-7Mg"/>
+                        <constraint firstAttribute="trailing" secondItem="7v0-Di-gAy" secondAttribute="trailing" constant="8" id="Th3-X9-NUA"/>
+                        <constraint firstAttribute="width" constant="50" id="YkD-LT-KcP"/>
+                        <constraint firstItem="7v0-Di-gAy" firstAttribute="leading" secondItem="OZR-L7-HhQ" secondAttribute="leading" constant="8" id="ebV-EQ-V4i"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.98737925289999995" green="0.83241838219999997" blue="0.13642343879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3WB-Ym-zFQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="5RS-Ov-hSp"/>
+                <constraint firstItem="3WB-Ym-zFQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ft7-gF-vPG"/>
+                <constraint firstItem="OZR-L7-HhQ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="gsU-1L-zkN"/>
+                <constraint firstItem="OZR-L7-HhQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="mc8-cl-IXV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
+</document>
