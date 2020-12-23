@@ -51,52 +51,32 @@ final class IrregularCollectionViewLayout: UICollectionViewLayout {
     
     /// 前もってセルの位置情報を計算しておく
     /// ここで計算してないとカクつきの原因になったりする
-    /// indexPathに応じたコンテンツタイプをself.layoutsが持ってるので、そこからindexPathに応じたitemsRecを計算する
+    /// indexPathに応じたコンテンツタイプをself.layoutsが持ってるので、そこからindexPathに応じたframeを計算する
     override func prepare() {
-        guard attributesArray.isEmpty, let collectionView = collectionView else { return }
+        guard attributesArray.isEmpty, let collectionView = collectionView, !layouts.isEmpty else { return }
         let itemPerRow = 3
         let collectionViewWidth = collectionView.bounds.width
-        let spacings = interitemSpacing * CGFloat(itemPerRow - 1)
-
-        let unitWidth = floor((collectionViewWidth - 8 * 2 - spacings) / CGFloat(itemPerRow))
-        let defaultSize = CGSize(width: 262, height: 332)
-        let unitHeight = defaultSize.height * (unitWidth / defaultSize.width)
         
-//        var xOffsets = [CGFloat]() // 各コンテンツのx座標
-//        var yOffsets = [CGFloat]() // 各コンテンツのy座標
-//        var widthArray = [CGFloat]() // 各コンテンツの幅
-//        var heightArray = [CGFloat]() // 各コンテンツの高さ
-
         var frameArray = [CGRect]()
-        var rowCount = 0
-        var columnCount = 0
-
-        func resetRow() {
-            rowCount = 0
-        }
-        
-        rowCount = layouts.count / 3
+        let rowCount = (layouts.count + itemPerRow - 1) / itemPerRow
         var tmpLayouts: [ContentsType] = layouts
         var yOffset: CGFloat = 0
-        for i in 0...rowCount {
-            let threeLayouts = tmpLayouts.prefix(3)
-            if i != rowCount {
-                tmpLayouts.removeFirst(3)
-            let ret = self.calcCellRectByThreeCells(yOffset,
-                                                    first: threeLayouts[0],
-                                                    second: threeLayouts[1],
-                                                    third: threeLayouts[2])
-            frameArray.append(ret.first)
-            frameArray.append(ret.second)
-            frameArray.append(ret.third)
-            yOffset = ret.third.maxY
+        for _ in 0...rowCount {
+            let threeLayouts = tmpLayouts.prefix(itemPerRow).map { $0 }
+            let rects = self.calcCellRectByThreeCells(yOffset, contents: threeLayouts)
+            _ = rects.map { frameArray.append($0) }
+            yOffset = frameArray.last?.maxY ?? 0
+            if tmpLayouts.count >= itemPerRow {
+                tmpLayouts.removeSubrange(0..<itemPerRow)
             }
         }
         
         for index in 0..<collectionView.numberOfItems(inSection: 0) {
             // 計算したframeからattributesArrayを算出
+            guard let insetFrame = frameArray[safe: index] else {
+                continue
+            }
             let indexPath = IndexPath(item: index, section: 0)
-            let insetFrame = frameArray[index].insetBy(dx: interitemSpacing, dy: linespacing)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = insetFrame
             attributesArray.append(attributes)
@@ -130,10 +110,20 @@ final class IrregularCollectionViewLayout: UICollectionViewLayout {
 extension IrregularCollectionViewLayout {
     
     /// セルのサイズを三つずつの単位で計算する
-    private func calcCellRectByThreeCells(_ yOffset: CGFloat,
-                                          first: ContentsType,
-                                          second: ContentsType?,
-                                          third: ContentsType?) -> UnitCellRect {
+    private func calcCellRectByThreeCells(_ yOffset: CGFloat, contents: [ContentsType]) -> [CGRect] {
+        
+        guard let first = contents[safe: 0] else {
+            return [] // 最初のコンテンツがなければ空の配列
+        }
+        
+        guard let second = contents[safe: 1] else {
+            return singleCellRect(yOffset, type: first) // 一つしかコンテンツがない時のframeを算出
+        }
+
+        guard let third = contents[safe: 2] else {
+            return doubleCellRect(yOffset, types: [first, second]) // 二つしかコンテンツがない時のframeを算出
+        }
+
         // 三つともsmallの場合
         if case .small = first, case .small = second, case .small = third {
             return normalUnitCellRect(yOffset)
@@ -152,56 +142,92 @@ extension IrregularCollectionViewLayout {
         return normalUnitCellRect(yOffset)
     }
     
+    private func singleCellRect(_ yOffset: CGFloat, type: ContentsType) -> [CGRect] {
+        switch type {
+        case .small:
+            return [CGRect(x: self.inset, y: yOffset + self.inset, width: self.unitSize.width, height: self.unitSize.height)]
+        case .large:
+            return [CGRect(x: 0, y: yOffset,
+                           width: self.unitSize.width * 2 + self.linespacing,
+                           height: self.unitSize.height * 2 + self.interitemSpacing)]
+        }
+    }
+    
+    private func doubleCellRect(_ yOffset: CGFloat, types: [ContentsType]) -> [CGRect] {
+        guard let first = types.first, let second = types[safe: 1] else {
+            return []
+        }
+        switch (first, second) {
+        case (.small, .small):
+            let first = CGRect(x: self.inset, y: yOffset + self.inset,
+                                   width: self.unitSize.width, height: self.unitSize.height)
+            let second = CGRect(x: first.maxX + self.inset, y: yOffset + self.inset,
+                                    width: self.unitSize.width, height: self.unitSize.height)
+            return [first, second]
+        case (.small, .large):
+            let first = CGRect(x: self.inset, y: yOffset + self.inset,
+                                   width: self.unitSize.width, height: self.unitSize.height)
+            let second = CGRect(x: first.maxX + self.inset, y: yOffset + self.inset,
+                                    width: self.unitSize.width * 2 + self.linespacing,
+                                    height: self.unitSize.height * 2 + self.interitemSpacing)
+            return [first, second]
+        case (.large, .small):
+            let first = CGRect(x: self.inset, y: yOffset + self.inset,
+                                   width: self.unitSize.width * 2 + self.linespacing,
+                                   height: self.unitSize.height * 2 + self.interitemSpacing)
+            let second = CGRect(x: first.maxX + self.inset, y: yOffset + self.inset,
+                                    width: self.unitSize.width, height: self.unitSize.height)
+            return [first, second]
+        case (.large, .large):
+            fatalError("二つ連続でlargeサイズのコンテンツは並ばない想定です")
+        }
+
+    }
+
     // 全て基本サイズの小さいサイズが横に三つ並んだ形
-    private func normalUnitCellRect(_ yOffset: CGFloat) -> UnitCellRect {
-        let firstRect = CGRect(x: self.inset, y: yOffset + self.inset,
+    private func normalUnitCellRect(_ yOffset: CGFloat) -> [CGRect] {
+        let first = CGRect(x: self.inset, y: yOffset + self.inset,
                                width: self.unitSize.width, height: self.unitSize.height)
-        let secondRect = CGRect(x: firstRect.maxX + self.inset, y: yOffset + self.inset,
+        let second = CGRect(x: first.maxX + self.inset, y: yOffset + self.inset,
                                 width: self.unitSize.width, height: self.unitSize.height)
-        let thirdRect = CGRect(x: secondRect.maxX + self.inset, y: yOffset + self.inset,
+        let third = CGRect(x: second.maxX + self.inset, y: yOffset + self.inset,
                                width: self.unitSize.width, height: self.unitSize.height)
-        return UnitCellRect(first: firstRect, second: secondRect, third: thirdRect)
+        return [first, second, third]
     }
     
     // firstがlargeのときは左のセルが大きい形
-    private func firstLargeUnitCellRect(_ yOffset: CGFloat) -> UnitCellRect {
-        let firstRect = CGRect(x: self.inset, y: yOffset + self.inset,
+    private func firstLargeUnitCellRect(_ yOffset: CGFloat) -> [CGRect] {
+        let first = CGRect(x: self.inset, y: yOffset + self.inset,
                                width: self.unitSize.width * 2 + self.linespacing,
                                height: self.unitSize.height * 2 + self.interitemSpacing)
-        let secondRect = CGRect(x: firstRect.maxX + self.inset, y: yOffset + self.inset,
+        let second = CGRect(x: first.maxX + self.inset, y: yOffset + self.inset,
                                 width: self.unitSize.width, height: self.unitSize.height)
-        let thirdRect = CGRect(x: firstRect.maxX + self.inset, y: secondRect.maxY + self.inset,
+        let third = CGRect(x: first.maxX + self.inset, y: second.maxY + self.inset,
                                width: self.unitSize.width, height: self.unitSize.height)
-        return UnitCellRect(first: firstRect, second: secondRect, third: thirdRect)
+        return [first, second, third]
     }
     
     // secondがlargeのときは右のセルが大きい形
-    private func secondLargeUnitCellRect(_ yOffset: CGFloat) -> UnitCellRect {
-        let firstRect = CGRect(x: self.inset, y: yOffset + self.inset,
+    private func secondLargeUnitCellRect(_ yOffset: CGFloat) -> [CGRect] {
+        let first = CGRect(x: self.inset, y: yOffset + self.inset,
                                width: self.unitSize.width, height: self.unitSize.height)
-        let secondRect = CGRect(x: firstRect.maxX + self.inset, y: yOffset + self.inset,
+        let second = CGRect(x: first.maxX + self.inset, y: yOffset + self.inset,
                                 width: self.unitSize.width * 2 + self.linespacing,
                                 height: self.unitSize.height * 2 + self.interitemSpacing)
-        let thirdRect = CGRect(x: self.inset, y: firstRect.maxY + self.inset,
+        let third = CGRect(x: self.inset, y: first.maxY + self.inset,
                                width: self.unitSize.width, height: self.unitSize.height)
-        return UnitCellRect(first: firstRect, second: secondRect, third: thirdRect)
+        return [first, second, third]
     }
     
     // thirdがlargeのときは右のセルが大きい形
-    private func thirdLargeUnitCellRect(_ yOffset: CGFloat) -> UnitCellRect {
-        let firstRect = CGRect(x: self.inset, y: yOffset + self.inset,
+    private func thirdLargeUnitCellRect(_ yOffset: CGFloat) -> [CGRect] {
+        let first = CGRect(x: self.inset, y: yOffset + self.inset,
                                width: self.unitSize.width, height: self.unitSize.height)
-        let secondRect = CGRect(x: self.inset, y: firstRect.maxY + self.inset,
+        let second = CGRect(x: self.inset, y: first.maxY + self.inset,
                                 width: self.unitSize.width, height: self.unitSize.height)
-        let thirdRect = CGRect(x: firstRect.maxX + self.inset, y: yOffset + self.inset,
+        let third = CGRect(x: first.maxX + self.inset, y: yOffset + self.inset,
                                width: self.unitSize.width * 2 + self.linespacing,
                                height: self.unitSize.height * 2 + self.interitemSpacing)
-        return UnitCellRect(first: firstRect, second: secondRect, third: thirdRect)
-    }
-    
-    struct UnitCellRect {
-        let first: CGRect
-        let second: CGRect
-        let third: CGRect
+        return [first, second, third]
     }
 }
