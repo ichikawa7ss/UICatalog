@@ -16,8 +16,8 @@ enum IrregularCollectionContentsModelGenarator {
             .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .large,
             .small, .small, .small, .small, .small, .small, .small, .large,
             .small, .small, .small, .small, .small, .small, .small, .small, .small, .large,
-            .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .small, .small,  .large,
-            .small, .small, .small, .small,
+            .small, .small, .small, .small, .small, .small, .large,
+            .small, .small, .large, .large,
         ]
     }
 }
