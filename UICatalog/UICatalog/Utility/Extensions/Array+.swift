@@ -23,11 +23,20 @@ extension Array {
 }
 
 extension Array {
-    func pair() -> [(Element, Element?)] {
+    func twoPair() -> [(Element, Element?)] {
         var copy: [Element?] = self
         copy.append(nil)
 
         return self.enumerated()
             .map { ($0.element, copy[$0.offset + 1]) }
+    }
+    
+    func threePair() -> [(Element, Element?, Element?)] {
+        var copy: [Element?] = self
+        copy.append(nil)
+        copy.append(nil)
+
+        return self.enumerated()
+            .map { ($0.element, copy[$0.offset + 1], copy[$0.offset + 2]) }
     }
 }

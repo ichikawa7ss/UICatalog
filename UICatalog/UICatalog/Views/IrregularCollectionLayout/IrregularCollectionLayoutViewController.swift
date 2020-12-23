@@ -20,10 +20,15 @@ final class IrregularCollectionLayoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.isEnableLayouts(data) {
-            let layout = IrregularCollectionViewLayout(layouts: data)
-            self.collectionView.collectionViewLayout = layout
+        self.setupContents()
+    }
+    
+    func setupContents() {
+        if !self.isEnableLayouts(self.data) {
+         	assertionFailure("Largeサイズのコンテンツが二回連続で入るとコンテンツが正しく表示されなくなります")
         }
+        let layout = IrregularCollectionViewLayout(layouts: data)
+        self.collectionView.collectionViewLayout = layout
     }
 }
 
@@ -49,13 +54,9 @@ extension IrregularCollectionLayoutViewController {
     /// 仕様：largeの次は2回はsmallが入ってはいけない
     private func isEnableLayouts(_ layouts: [ContentsType]) -> Bool {
         var ret = true
-        // largeの次は連続でsmallが入ったら
-        layouts.pair().forEach { one, afterOne in
-            guard let afterOne = afterOne else {
-                return
-            }
-            
-            if case .large = one, case .large = afterOne {
+        layouts.threePair().forEach { one, two, three in
+            // 連続する三つのコンテンツの中に二つ以上largeがあったら不正なレイアウト
+            if [one, two, three].filter({ $0 == .large }).count >= 2 {
                 ret = false
             }
         }
