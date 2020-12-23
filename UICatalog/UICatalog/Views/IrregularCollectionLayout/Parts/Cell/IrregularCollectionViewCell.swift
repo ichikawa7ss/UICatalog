@@ -10,9 +10,14 @@ import UIKit
 
 class IrregularCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet private weak var itemView: WEARItemView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func configure(cellId: Int, size: CGSize) {
+        self.itemView.configure(imageId: cellId, width: Int(size.width), height: Int(size.height))
+    }
 }

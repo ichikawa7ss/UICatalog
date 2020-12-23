@@ -45,6 +45,11 @@ final class IrregularCollectionViewLayout: UICollectionViewLayout {
         return CGSize(width: unitWidth, height: unitHeight)
     }()
     
+    lazy var doubleSize: CGSize = {
+        return CGSize(width: (self.unitSize.width * 2 + self.interitemSpacing),
+                      height: (self.unitSize.height * 2 + self.linespacing))
+    }()
+    
     override var collectionViewContentSize: CGSize {
         return CGSize(width: self.contentWidth, height: self.contentHeight)
     }

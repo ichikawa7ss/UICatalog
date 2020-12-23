@@ -39,11 +39,21 @@ extension IrregularCollectionLayoutViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionViewCell(collectionView.dequeueReusableCell(for: indexPath))
+        let cell = self.collectionViewCell(collectionView.dequeueReusableCell(for: indexPath), indexPath: indexPath)
         return cell
     }
     
-    private func collectionViewCell(_ cell: IrregularCollectionViewCell) -> IrregularCollectionViewCell {
+    private func collectionViewCell(_ cell: IrregularCollectionViewCell, indexPath: IndexPath) -> IrregularCollectionViewCell {
+        guard let layout = self.collectionView.collectionViewLayout as? IrregularCollectionViewLayout else {
+            return IrregularCollectionViewCell()
+        }
+        
+        switch self.data[indexPath.row] {
+        case .small:
+            cell.configure(cellId: indexPath.row, size: CGSize(width: layout.unitSize.width, height: layout.unitSize.height))
+        case .large:
+            cell.configure(cellId: indexPath.row, size: CGSize(width: layout.doubleSize.width, height: layout.doubleSize.height))
+        }
         return cell
     }
 }
