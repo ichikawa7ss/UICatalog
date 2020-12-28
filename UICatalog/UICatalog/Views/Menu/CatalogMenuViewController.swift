@@ -53,6 +53,9 @@ extension CatalogMenuViewController: UITableViewDelegate {
         case .irregularCollectionLayout:
             let vc = IrregularCollectionLayoutViewController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
+        case .swipableView:
+            let vc = SwipableViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -63,6 +66,7 @@ enum UIMenu: Int, CaseIterable {
     case switchableViewController
     case regularCollectionLayout
     case irregularCollectionLayout
+    case swipableView
     
     var title: String {
         switch self {
@@ -74,6 +78,8 @@ enum UIMenu: Int, CaseIterable {
             return "Regular Collection Layout"
         case .irregularCollectionLayout:
             return "Irregular Collection Layout"
+        case .swipableView:
+            return "Swipable View like Tinder"
         }
         
     }
