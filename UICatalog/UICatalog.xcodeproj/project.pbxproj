@@ -39,6 +39,10 @@
 		7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591661B2518A3E100AFFE41 /* Bundle+.swift */; };
 		75A0D6C82599C78600D763FF /* SwipableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A0D6C72599C78600D763FF /* SwipableViewController.storyboard */; };
 		75A0D6CA2599C79400D763FF /* SwipableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0D6C92599C79400D763FF /* SwipableViewController.swift */; };
+		75A0D6CD2599CA2100D763FF /* SwipableViewSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0D6CC2599CA2100D763FF /* SwipableViewSetting.swift */; };
+		75A0D6D02599CBCF00D763FF /* SwipableViewSetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0D6CF2599CBCF00D763FF /* SwipableViewSetDelegate.swift */; };
+		75A0D6D42599CC5700D763FF /* SwipableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0D6D32599CC5700D763FF /* SwipableView.swift */; };
+		75A0D6D82599D98700D763FF /* SwipableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A0D6D72599D98700D763FF /* SwipableView.xib */; };
 		75B48AD725374344009AAE54 /* RightLargeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B48AD525374344009AAE54 /* RightLargeTableCell.swift */; };
 		75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B48AD625374344009AAE54 /* RightLargeTableCell.xib */; };
 		75BCC3EA2511A0930058F73D /* SearchAnimationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */; };
@@ -90,6 +94,10 @@
 		7591661B2518A3E100AFFE41 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		75A0D6C72599C78600D763FF /* SwipableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwipableViewController.storyboard; sourceTree = "<group>"; };
 		75A0D6C92599C79400D763FF /* SwipableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableViewController.swift; sourceTree = "<group>"; };
+		75A0D6CC2599CA2100D763FF /* SwipableViewSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableViewSetting.swift; sourceTree = "<group>"; };
+		75A0D6CF2599CBCF00D763FF /* SwipableViewSetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableViewSetDelegate.swift; sourceTree = "<group>"; };
+		75A0D6D32599CC5700D763FF /* SwipableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableView.swift; sourceTree = "<group>"; };
+		75A0D6D72599D98700D763FF /* SwipableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipableView.xib; sourceTree = "<group>"; };
 		75B48AD525374344009AAE54 /* RightLargeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightLargeTableCell.swift; sourceTree = "<group>"; };
 		75B48AD625374344009AAE54 /* RightLargeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightLargeTableCell.xib; sourceTree = "<group>"; };
 		75BCC3E92511A0930058F73D /* SearchAnimationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchAnimationViewController.storyboard; sourceTree = "<group>"; };
@@ -276,10 +284,38 @@
 		75A0D6C52599C75100D763FF /* SwipableView */ = {
 			isa = PBXGroup;
 			children = (
+				75A0D6D12599CC1B00D763FF /* View */,
+				75A0D6CE2599CBB400D763FF /* Delegate */,
+				75A0D6CB2599C9FA00D763FF /* Setting */,
 				75A0D6C72599C78600D763FF /* SwipableViewController.storyboard */,
 				75A0D6C92599C79400D763FF /* SwipableViewController.swift */,
 			);
 			path = SwipableView;
+			sourceTree = "<group>";
+		};
+		75A0D6CB2599C9FA00D763FF /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				75A0D6CC2599CA2100D763FF /* SwipableViewSetting.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		75A0D6CE2599CBB400D763FF /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				75A0D6CF2599CBCF00D763FF /* SwipableViewSetDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		75A0D6D12599CC1B00D763FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75A0D6D32599CC5700D763FF /* SwipableView.swift */,
+				75A0D6D72599D98700D763FF /* SwipableView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		75B48AD425374303009AAE54 /* RightLargeTableCell */ = {
@@ -475,6 +511,7 @@
 				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
 				753EA8A12593953300267229 /* SearchViewController.storyboard in Resources */,
 				7516D57625490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard in Resources */,
+				75A0D6D82599D98700D763FF /* SwipableView.xib in Resources */,
 				75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */,
 				75884F532524197F007050C8 /* RegularCollectionLayoutViewController.storyboard in Resources */,
 				753EA89E2593950600267229 /* HomeViewController.storyboard in Resources */,
@@ -533,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A0D6CD2599CA2100D763FF /* SwipableViewSetting.swift in Sources */,
 				75F4CFF225117D4300EAF181 /* UIView+.swift in Sources */,
 				75A0D6CA2599C79400D763FF /* SwipableViewController.swift in Sources */,
 				75BCC3EF2511A3D10058F73D /* UICatalogNavigationController.swift in Sources */,
@@ -542,6 +580,7 @@
 				756C5066253690670075498E /* UITableView+.swift in Sources */,
 				756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */,
 				75B48AD725374344009AAE54 /* RightLargeTableCell.swift in Sources */,
+				75A0D6D42599CC5700D763FF /* SwipableView.swift in Sources */,
 				75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */,
 				75884F6325241B5E007050C8 /* WEARItemFooterView.swift in Sources */,
 				7516D5712549040C005A4F50 /* IrregularCollectionLayoutViewController.swift in Sources */,
@@ -555,6 +594,7 @@
 				75F4CFEC25117A8B00EAF181 /* CatalogMenuViewController.swift in Sources */,
 				7591661525187DAE00AFFE41 /* SlideSearchHeaderView.swift in Sources */,
 				7516D58125490F0A005A4F50 /* UICollectionView+.swift in Sources */,
+				75A0D6D02599CBCF00D763FF /* SwipableViewSetDelegate.swift in Sources */,
 				75884F5825241ABA007050C8 /* WEARItemView.swift in Sources */,
 				750068E12552374A0071F39E /* IrregularCollectionContentsModel.swift in Sources */,
 				7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */,
