@@ -50,11 +50,11 @@ class SwipableView: BaseView {
         self.ageLabel.text = "27"
         self.nameLabel.text = "Arisa Bryant"
         self.nationLabel.text = "アメリカ"
-        self.imageView.loadImage(url)
+//        self.imageView.loadImage(url)
     }
     
     private func setup() {
-    	
+        self.setPanGestureRecognizer()
     }
 }
 

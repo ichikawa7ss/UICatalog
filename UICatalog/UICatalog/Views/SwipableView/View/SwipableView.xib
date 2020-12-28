@@ -22,6 +22,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9ph-Sa-kbH">
                     <rect key="frame" x="0.0" y="0.0" width="344" height="530"/>
+                    <color key="backgroundColor" red="0.96924716229999996" green="0.064876057210000004" blue="0.078770600260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="8"/>
@@ -79,7 +80,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fPh-bV-3iE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="49a-LD-fxO"/>
                 <constraint firstItem="9ph-Sa-kbH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KyN-3g-PRJ"/>
