@@ -54,12 +54,23 @@ class SwipableView: BaseView {
     }
     
     private func setup() {
+        self.setPreferences()
         self.setPanGestureRecognizer()
     }
 }
 
 extension SwipableView {
 
+    private func setPreferences() {
+        self.frame = CGRect(
+            origin: CGPoint.zero,
+            size: CGSize(
+                width: SwipableViewDefaultSetting.cardSetViewWidth,
+                height: SwipableViewDefaultSetting.cardSetViewHeight
+            )
+        )
+    }
+    
     private func setPanGestureRecognizer() {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.startDragging))
         self.addGestureRecognizer(panGestureRecognizer)
@@ -71,6 +82,8 @@ extension SwipableView {
         // 中心地点からのX、Yの差分を更新する
         self.diffCenterX = sender.translation(in: self).x
         self.diffCenterY = sender.translation(in: self).y
+        
+        let tan = diffCenterY / abs(diffCenterX)
         
         switch sender.state {
 
@@ -119,15 +132,17 @@ extension SwipableView {
             
             print("velocity:", velocity)
             
+            // TODO: vexocityが閾値以下だったら初期位置に戻るようにする
+            
             let shouldMoveToLeft = self.diffCenterX < -self.swipableXThreshold
             let shouldMoveToRight = self.swipableXThreshold < self.diffCenterX
             
             if shouldMoveToLeft {
-                self.moveOutOfScreen(velocity, isLeft: true)
+                self.moveOutOfScreen(tan, isLeft: true)
                 self.delegate?.swipedLeftPosition(self)
             }
             else if shouldMoveToRight {
-                self.moveOutOfScreen(velocity, isLeft: false)
+                self.moveOutOfScreen(tan, isLeft: false)
                 self.delegate?.swipedRightPosition(self)
             }
             else {
@@ -144,12 +159,20 @@ extension SwipableView {
         }
     }
     
-    private func moveOutOfScreen(_ velocity: CGPoint, isLeft: Bool) {
+    /// スワイプ中のカードを画面外に移動して削除する
+    /// - Parameters:
+    ///   - tan: x軸に対する仰角。第一象限、第二象限は正の値、第三象限、第四象限は負の値になる想定。
+    ///   - isLeft: true → 左に動かす。 false → 右に動かす。
+    private func moveOutOfScreen(_ tan: CGFloat, isLeft: Bool) {
         // 領域外に動かした後の場所を決める
         let absXPosition = UIScreen.main.bounds.size.width * 1.6
         let endCenterXPosition = isLeft ? -absXPosition : absXPosition
-        let endCenterYPosition = velocity.y // これってなんのvelocity?普通にsender経由じゃなくてもとれるの？？
+        let endCenterYPosition = (tan * absXPosition) + self.center.y
         let endCenterPosition = CGPoint(x: endCenterXPosition, y: endCenterYPosition)
+
+        print("moveOutOfScreen tan: \(tan)")
+        print("moveOutOfScreen currentCenter: \(self.center)")
+        print("moveOutOfScreen endCenterPosition: \(endCenterPosition)")
         
         UIView.animate(withDuration: self.durationOfSwipeOut, animations: {
             self.center = endCenterPosition
@@ -161,7 +184,7 @@ extension SwipableView {
     private func returnToOriginalPosition() {
 
         UIView.animate(withDuration: self.durationOfReturnOriginal) {
-            self.center = self.initialCenter
+            self.frame.origin = .zero
             
             // TOOD: -　移動時に透過度や縮尺や回転などを変えていたりしたら元に戻す
         }

@@ -22,12 +22,19 @@ final class SwipableViewController: UIViewController {
 extension SwipableViewController {
     
     private func setup() {
+        let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height ?? 0.0
+        let centerY = (self.view.frame.height - navigationBarHeight) / 2.0 + navigationBarHeight
+        let baseView = UIView()
+        baseView.frame = CGRect(x: 50, y: 50, width: 344, height: 530)
+        baseView.center = CGPoint(x: self.view.center.x , y: centerY)
+        self.view.addSubview(baseView)
+        
         self.imgURLs.map { url in
             let swipableCardView = SwipableView()
             swipableCardView.delegate = self
             swipableCardView.setData(url)
             
-            self.view.addSubview(swipableCardView)
+            baseView.addSubview(swipableCardView)
         }
     }
 }
