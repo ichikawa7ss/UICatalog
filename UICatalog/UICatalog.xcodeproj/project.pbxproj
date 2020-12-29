@@ -50,6 +50,9 @@
 		75BCC3EF2511A3D10058F73D /* UICatalogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */; };
 		75D14179256DEEAF00823BCB /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D14178256DEEAF00823BCB /* Array+.swift */; };
 		75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DEA7B0253754EA00439EC8 /* UIImageView+.swift */; };
+		75E0489A259B79A6007DADFB /* ImpressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E04899259B79A6007DADFB /* ImpressionView.swift */; };
+		75E0489C259B79B3007DADFB /* ImpressionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E0489B259B79B3007DADFB /* ImpressionView.xib */; };
+		75E048A0259B7B2F007DADFB /* HoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0489F259B7B2F007DADFB /* HoverView.swift */; };
 		75EEC570255B791600CFCB3A /* IrregularCollectionVewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */; };
 		75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CFD5251178D000EAF181 /* AppDelegate.swift */; };
 		75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F4CFDE251178D200EAF181 /* Assets.xcassets */; };
@@ -105,6 +108,9 @@
 		75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogNavigationController.swift; sourceTree = "<group>"; };
 		75D14178256DEEAF00823BCB /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		75DEA7B0253754EA00439EC8 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		75E04899259B79A6007DADFB /* ImpressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionView.swift; sourceTree = "<group>"; };
+		75E0489B259B79B3007DADFB /* ImpressionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImpressionView.xib; sourceTree = "<group>"; };
+		75E0489F259B7B2F007DADFB /* HoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverView.swift; sourceTree = "<group>"; };
 		75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionVewLayout.swift; sourceTree = "<group>"; };
 		75F4CFD2251178D000EAF181 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F4CFD5251178D000EAF181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -312,6 +318,7 @@
 		75A0D6D12599CC1B00D763FF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				75E04897259B796A007DADFB /* Parts */,
 				75A0D6D32599CC5700D763FF /* SwipableView.swift */,
 				75A0D6D72599D98700D763FF /* SwipableView.xib */,
 			);
@@ -343,6 +350,39 @@
 				75BCC3EE2511A3D10058F73D /* UICatalogNavigationController.swift */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		75E04897259B796A007DADFB /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				75E04898259B7982007DADFB /* ImpressionView */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		75E04898259B7982007DADFB /* ImpressionView */ = {
+			isa = PBXGroup;
+			children = (
+				75E04899259B79A6007DADFB /* ImpressionView.swift */,
+				75E0489B259B79B3007DADFB /* ImpressionView.xib */,
+			);
+			path = ImpressionView;
+			sourceTree = "<group>";
+		};
+		75E0489D259B7B1A007DADFB /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				75E0489E259B7B20007DADFB /* HoverView */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		75E0489E259B7B20007DADFB /* HoverView */ = {
+			isa = PBXGroup;
+			children = (
+				75E0489F259B7B2F007DADFB /* HoverView.swift */,
+			);
+			path = HoverView;
 			sourceTree = "<group>";
 		};
 		75F4CFC9251178D000EAF181 = {
@@ -402,6 +442,7 @@
 		75F4CFEF25117D1B00EAF181 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				75E0489D259B7B1A007DADFB /* Custom */,
 				75F4CFF025117D2600EAF181 /* Extensions */,
 			);
 			path = Utility;
@@ -510,6 +551,7 @@
 				75A0D6C82599C78600D763FF /* SwipableViewController.storyboard in Resources */,
 				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
 				753EA8A12593953300267229 /* SearchViewController.storyboard in Resources */,
+				75E0489C259B79B3007DADFB /* ImpressionView.xib in Resources */,
 				7516D57625490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard in Resources */,
 				75A0D6D82599D98700D763FF /* SwipableView.xib in Resources */,
 				75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */,
@@ -579,6 +621,7 @@
 				75F4CFF425117D6900EAF181 /* UIViewController+.swift in Sources */,
 				756C5066253690670075498E /* UITableView+.swift in Sources */,
 				756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */,
+				75E048A0259B7B2F007DADFB /* HoverView.swift in Sources */,
 				75B48AD725374344009AAE54 /* RightLargeTableCell.swift in Sources */,
 				75A0D6D42599CC5700D763FF /* SwipableView.swift in Sources */,
 				75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */,
@@ -589,6 +632,7 @@
 				75EEC570255B791600CFCB3A /* IrregularCollectionVewLayout.swift in Sources */,
 				75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */,
 				7516D57C254908A1005A4F50 /* IrregularCollectionViewCell.swift in Sources */,
+				75E0489A259B79A6007DADFB /* ImpressionView.swift in Sources */,
 				753EA89A2593943100267229 /* SwitchButtonView.swift in Sources */,
 				753EA87E259393E800267229 /* SwitchableRootViewController.swift in Sources */,
 				75F4CFEC25117A8B00EAF181 /* CatalogMenuViewController.swift in Sources */,

@@ -14,7 +14,7 @@ class SwipableView: BaseView {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var ageLabel: UILabel!
     @IBOutlet private weak var nationLabel: UILabel!
-    @IBOutlet private weak var favoriteView: UIView!
+    @IBOutlet private weak var impressionView: ImpressionView!
 
     // デフォルトの中心値
     private var initialCenter: CGPoint = CGPoint(
@@ -51,6 +51,9 @@ class SwipableView: BaseView {
         self.nameLabel.text = "Arisa Bryant"
         self.nationLabel.text = "アメリカ"
 //        self.imageView.loadImage(url)
+        
+        self.impressionView.configure(String(3.0))
+        self.impressionView.delegate = self
     }
     
     private func setup() {
@@ -188,5 +191,12 @@ extension SwipableView {
             
             // TOOD: -　移動時に透過度や縮尺や回転などを変えていたりしたら元に戻す
         }
+    }
+}
+
+extension SwipableView: ImpressionViewDelegate {
+
+    func didTouchUpInsideImpressionButton() {
+        print("didTouchUpInsideImpressionButton")
     }
 }

@@ -9,8 +9,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwipableView" customModule="UICatalog" customModuleProvider="target">
             <connections>
                 <outlet property="ageLabel" destination="eyx-9v-ILn" id="fvm-dB-PD3"/>
-                <outlet property="favoriteView" destination="TXk-RK-dfN" id="j8C-fF-gid"/>
                 <outlet property="imageView" destination="9ph-Sa-kbH" id="bRb-7r-IZA"/>
+                <outlet property="impressionView" destination="TXk-RK-dfN" id="twt-qD-Yf9"/>
                 <outlet property="nameLabel" destination="eva-gW-Nc0" id="jnn-tv-5Oh"/>
                 <outlet property="nationLabel" destination="8Sf-h5-WSi" id="jSl-qE-rOc"/>
             </connections>
@@ -29,9 +29,9 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXk-RK-dfN">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXk-RK-dfN" customClass="ImpressionView" customModule="UICatalog" customModuleProvider="target">
                     <rect key="frame" x="16" y="16" width="88" height="40"/>
-                    <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="AP7-Gd-Cxa"/>
                         <constraint firstAttribute="width" constant="88" id="tox-XG-MWB"/>
