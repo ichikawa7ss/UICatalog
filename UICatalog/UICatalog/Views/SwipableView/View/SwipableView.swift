@@ -9,13 +9,13 @@
 import UIKit
 
 class SwipableView: BaseView {
- 
+    
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var ageLabel: UILabel!
     @IBOutlet private weak var nationLabel: UILabel!
     @IBOutlet private weak var impressionView: ImpressionView!
-
+    
     // デフォルトの中心値
     private var initialCenter: CGPoint = CGPoint(
         x: UIScreen.main.bounds.size.width / 2,
@@ -24,7 +24,7 @@ class SwipableView: BaseView {
     
     // ドラッグ開始時のViewがある位置を示す
     private var originalPoint: CGPoint = CGPoint.zero
-        
+    
     // 中心位置からの差分
     private var diffCenterX: CGFloat = 0.0
     private var diffCenterY: CGFloat = 0.0
@@ -44,16 +44,26 @@ class SwipableView: BaseView {
     
     var delegate: SwipableViewSetDelegate?
     
-    func setData(_ url: String) {
+    func setData(_ id: Int) {
         self.setup()
         
         self.ageLabel.text = "27"
         self.nameLabel.text = "Arisa Bryant"
         self.nationLabel.text = "アメリカ"
-//        self.imageView.loadImage(url)
-        
+        self.imageView.loadRandomImage(id: id + 50,
+                                       width: Int(SwipableViewDefaultSetting.cardSetViewWidth),
+                                       height: Int(SwipableViewDefaultSetting.cardSetViewHeight))
+        self.setShadow()
         self.impressionView.configure(String(3.0))
         self.impressionView.delegate = self
+    }
+    
+    private func setShadow() {
+        self.layer.cornerRadius = 10
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = SwipableViewDefaultSetting.shadowOffset
+        self.layer.shadowOpacity = Float(SwipableViewDefaultSetting.shadowOpacity)
+        self.layer.shadowRadius = SwipableViewDefaultSetting.shadowBlur // FigmaのBlurはShadowRadiusに変換する時 1/2 にする
     }
     
     private func setup() {
@@ -63,7 +73,7 @@ class SwipableView: BaseView {
 }
 
 extension SwipableView {
-
+    
     private func setPreferences() {
         self.frame = CGRect(
             origin: CGPoint.zero,
@@ -78,10 +88,10 @@ extension SwipableView {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.startDragging))
         self.addGestureRecognizer(panGestureRecognizer)
     }
-        
+    
     /// ドラッグ開始時の処理
     @objc private func startDragging(_ sender: UIPanGestureRecognizer) {
-    
+        
         // 中心地点からのX、Yの差分を更新する
         self.diffCenterX = sender.translation(in: self).x
         self.diffCenterY = sender.translation(in: self).y
@@ -89,10 +99,9 @@ extension SwipableView {
         let tan = diffCenterY / abs(diffCenterX)
         
         switch sender.state {
-
+            
         // ドラッグ開始時
         case .began:
-            //
             originalPoint = CGPoint(
                 x: self.center.x - diffCenterX,
                 y: self.center.y - diffCenterY
@@ -123,8 +132,8 @@ extension SwipableView {
             self.movingRateX = min(diffCenterX / UIScreen.main.bounds.size.width, 1)
             self.movingRateY = min(diffCenterY / UIScreen.main.bounds.size.height, 1)
             
-            print("movingRateX:", movingRateX)
-            print("movingRateY:", movingRateY)
+            // print("movingRateX:", movingRateX)
+            // print("movingRateY:", movingRateY)
             
             // TODO: 移動割合に応じたUIの調整
             
@@ -133,9 +142,9 @@ extension SwipableView {
             // ドラッグ終了時点での速度を算出
             let velocity = sender.velocity(in: self)
             
-            print("velocity:", velocity)
+            // print("velocity:", velocity)
             
-            // TODO: vexocityが閾値以下だったら初期位置に戻るようにする
+            // TODO: velocityが内側のベクトルだったら初期位置に戻るようにする
             
             let shouldMoveToLeft = self.diffCenterX < -self.swipableXThreshold
             let shouldMoveToRight = self.swipableXThreshold < self.diffCenterX
@@ -154,7 +163,7 @@ extension SwipableView {
             }
             
             // TODO: ドラッグ開始時の座標位置の変数を初期化する
-
+            
             break
             
         default:
@@ -172,10 +181,10 @@ extension SwipableView {
         let endCenterXPosition = isLeft ? -absXPosition : absXPosition
         let endCenterYPosition = (tan * absXPosition) + self.center.y
         let endCenterPosition = CGPoint(x: endCenterXPosition, y: endCenterYPosition)
-
-        print("moveOutOfScreen tan: \(tan)")
-        print("moveOutOfScreen currentCenter: \(self.center)")
-        print("moveOutOfScreen endCenterPosition: \(endCenterPosition)")
+        
+        // print("moveOutOfScreen tan: \(tan)")
+        // print("moveOutOfScreen currentCenter: \(self.center)")
+        // print("moveOutOfScreen endCenterPosition: \(endCenterPosition)")
         
         UIView.animate(withDuration: self.durationOfSwipeOut, animations: {
             self.center = endCenterPosition
@@ -185,7 +194,7 @@ extension SwipableView {
     }
     
     private func returnToOriginalPosition() {
-
+        
         UIView.animate(withDuration: self.durationOfReturnOriginal) {
             self.frame.origin = .zero
             
@@ -195,8 +204,8 @@ extension SwipableView {
 }
 
 extension SwipableView: ImpressionViewDelegate {
-
+    
     func didTouchUpInsideImpressionButton() {
-        print("didTouchUpInsideImpressionButton")
+        // print("didTouchUpInsideImpressionButton")
     }
 }

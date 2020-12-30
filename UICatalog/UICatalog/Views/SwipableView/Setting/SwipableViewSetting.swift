@@ -17,6 +17,15 @@ protocol SwipableViewSetting {
     /// カード用Viewの高さ
     static var cardSetViewHeight: CGFloat { get }
     
+    /// shadowOffset
+    static var shadowOffset: CGSize { get }
+
+    /// shadowの濃さ
+    static var shadowOpacity: CGFloat { get }
+    
+    /// shadowのぼかし
+    static var shadowBlur: CGFloat { get }
+
     /// X方向のスワイプを許容する
     static var swipableXThresholdLength: CGFloat { get }
 
@@ -35,6 +44,12 @@ final class SwipableViewDefaultSetting: SwipableViewSetting {
     
     static var cardSetViewHeight: CGFloat = 530
 
+    static var shadowOffset: CGSize = CGSize(width: 0.0, height: 2.0)
+    
+    static var shadowOpacity: CGFloat = 0.25
+    
+    static var shadowBlur: CGFloat = 11
+    
     static var swipableXThresholdLength: CGFloat =  0.7 * UIScreen.main.bounds.width / 2
     
     static var swipableYThresholdLength: CGFloat = 0.7 * UIScreen.main.bounds.height / 2

@@ -10,7 +10,7 @@ import UIKit
 
 final class SwipableViewController: UIViewController {
 
-    private var imgURLs = [String](repeating: "", count: 10)
+    private var imgURLs = [String](repeating: "", count: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +29,10 @@ extension SwipableViewController {
         baseView.center = CGPoint(x: self.view.center.x , y: centerY)
         self.view.addSubview(baseView)
         
-        self.imgURLs.map { url in
+        self.imgURLs.enumerated().map { args in
             let swipableCardView = SwipableView()
             swipableCardView.delegate = self
-            swipableCardView.setData(url)
+            swipableCardView.setData(args.offset)
             
             baseView.addSubview(swipableCardView)
         }
@@ -59,6 +59,4 @@ extension SwipableViewController: SwipableViewSetDelegate {
     func returnToOriginalPosition(_ swipableView: SwipableView) {
         print("returnToOriginalPosition")
     }
-    
-    
 }
