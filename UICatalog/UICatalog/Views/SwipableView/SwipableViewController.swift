@@ -55,8 +55,8 @@ extension SwipableViewController: SwipableViewSetDelegate {
     }
     
     func swipableView(_ swipableView: SwipableView, updatePosition: CGPoint) {
-        let dx = updatePosition.x - SwipableViewDefaultSetting.cardSetViewWidth / 2
-        let dy = updatePosition.y - SwipableViewDefaultSetting.cardSetViewHeight / 2
+        let dx = updatePosition.x - SwipableViewDefaultSetting.cardViewWidth / 2
+        let dy = updatePosition.y - SwipableViewDefaultSetting.cardViewHeight / 2
         let ds = hypot(dx, dy)
         let base = SwipableViewDefaultSetting.upperTransitionLengthWhenExpandedFrontView
         let scale = SwipableViewDefaultSetting.lowerLimitViewScaling

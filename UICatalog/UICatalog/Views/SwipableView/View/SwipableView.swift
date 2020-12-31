@@ -36,11 +36,20 @@ class SwipableView: BaseView {
     private var movingRateX: CGFloat = 0.0
     private var movingRateY: CGFloat = 0.0
     
-    // TODO: UIに関わる設定値を保持する
-    
+    // size
+    private let cardViewWidth: CGFloat = SwipableViewDefaultSetting.cardViewWidth
+    private let cardViewHeight: CGFloat = SwipableViewDefaultSetting.cardViewHeight
+
+    // shadow
+    private let shadowOffset: CGSize = SwipableViewDefaultSetting.shadowOffset
+    private let shadowOpacity: CGFloat = SwipableViewDefaultSetting.shadowOpacity
+    private let shadowBlur: CGFloat = SwipableViewDefaultSetting.shadowBlur
+
+    // animation
     private let swipableXThreshold: CGFloat = SwipableViewDefaultSetting.swipableXThresholdLength
-    private let swipableThreshold: CGFloat = SwipableViewDefaultSetting.swipableYThresholdLength
-    
+    private let lowerLimitViewScaling: CGFloat = SwipableViewDefaultSetting.lowerLimitViewScaling
+    private let durationOfReturnOriginalScaling: TimeInterval = SwipableViewDefaultSetting.durationOfReturnOriginalScaling
+    private let durationOfScalingWhenPositionUpdated: TimeInterval = SwipableViewDefaultSetting.durationOfScalingWhenPositionUpdated
     private let durationOfReturnOriginal: TimeInterval = SwipableViewDefaultSetting.durationOfReturnOriginal
     private let durationOfSwipeOut: TimeInterval = SwipableViewDefaultSetting.durationOfSwipeOut
     
@@ -55,8 +64,8 @@ class SwipableView: BaseView {
         self.nameLabel.text = "Arisa Bryant"
         self.nationLabel.text = "アメリカ"
         self.imageView.loadRandomImage(id: id + 50,
-                                       width: Int(SwipableViewDefaultSetting.cardSetViewWidth),
-                                       height: Int(SwipableViewDefaultSetting.cardSetViewHeight))
+                                       width: Int(self.cardViewWidth),
+                                       height: Int(self.cardViewHeight))
         self.setShadow()
         self.impressionView.configure(String(3.0))
         self.impressionView.delegate = self
@@ -64,8 +73,10 @@ class SwipableView: BaseView {
     
     /// 自身のViewを設定された最小値にスケーリングする
     func setMinimamScale() {
-        let scale = SwipableViewDefaultSetting.lowerLimitViewScaling
-        self.transform = CGAffineTransform(scaleX: scale, y: scale)
+        let scale = self.lowerLimitViewScaling
+        UIView.animate(withDuration: self.durationOfReturnOriginalScaling) {
+            self.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
     }
     
     /// 指定の倍率に合わせて、画面を拡大縮小する
@@ -74,7 +85,7 @@ class SwipableView: BaseView {
         let scale = CGFloat(scaleToInitialSize)
 
         // 縮尺のセットアップ
-        UIView.animate(withDuration: SwipableViewDefaultSetting.durationOfScalingWhenPositionUpdated) {
+        UIView.animate(withDuration: self.durationOfScalingWhenPositionUpdated) {
             self.transform = CGAffineTransform(scaleX: scale, y: scale)
         }
     }
@@ -82,9 +93,9 @@ class SwipableView: BaseView {
     private func setShadow() {
         self.layer.cornerRadius = 10
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = SwipableViewDefaultSetting.shadowOffset
-        self.layer.shadowOpacity = Float(SwipableViewDefaultSetting.shadowOpacity)
-        self.layer.shadowRadius = SwipableViewDefaultSetting.shadowBlur // FigmaのBlurはShadowRadiusに変換する時 1/2 にする
+        self.layer.shadowOffset = self.shadowOffset
+        self.layer.shadowOpacity = Float(self.shadowOpacity)
+        self.layer.shadowRadius = self.shadowBlur
     }
     
     private func setup() {
@@ -100,8 +111,8 @@ extension SwipableView {
         self.frame = CGRect(
             origin: CGPoint.zero,
             size: CGSize(
-                width: SwipableViewDefaultSetting.cardSetViewWidth,
-                height: SwipableViewDefaultSetting.cardSetViewHeight
+                width: self.cardViewWidth,
+                height: self.cardViewHeight
             )
         )
     }
@@ -135,8 +146,6 @@ extension SwipableView {
             print("beganCenterX:", originalPoint.x)
             print("beganCenterY:", originalPoint.y)
             
-            // TODO: 透明度や「LIKE」「NOPE」などの表示など、ドラッグに合わせたUIComponetsのプロパティを調整する
-            
             break
             
         // ドラッグ中
@@ -156,8 +165,6 @@ extension SwipableView {
             
             // print("movingRateX:", movingRateX)
             // print("movingRateY:", movingRateY)
-            
-            // TODO: 移動割合に応じたUIの調整
             
         case .ended, .cancelled:
             
@@ -220,8 +227,6 @@ extension SwipableView {
         UIView.animate(withDuration: self.durationOfReturnOriginal) {
 			// TODO: 左端を基準点にすると縮尺が変わってると中心からずれるのでcenterを基準にする
             self.frame.origin = .zero
-            
-            // TOOD: -　移動時に透過度や縮尺や回転などを変えていたりしたら元に戻す
         }
     }
 }

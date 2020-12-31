@@ -12,10 +12,10 @@ import UIKit
 protocol SwipableViewSetting {
     
     /// カード用Viewの幅
-    static var cardSetViewWidth: CGFloat { get }
+    static var cardViewWidth: CGFloat { get }
 
     /// カード用Viewの高さ
-    static var cardSetViewHeight: CGFloat { get }
+    static var cardViewHeight: CGFloat { get }
     
     /// shadowOffset
     static var shadowOffset: CGSize { get }
@@ -54,9 +54,9 @@ protocol SwipableViewSetting {
 
 final class SwipableViewDefaultSetting: SwipableViewSetting {
    
-    static var cardSetViewWidth: CGFloat = 344
+    static var cardViewWidth: CGFloat = 344
     
-    static var cardSetViewHeight: CGFloat = 530
+    static var cardViewHeight: CGFloat = 530
 
     static var shadowOffset: CGSize = CGSize(width: 0.0, height: 2.0)
     
