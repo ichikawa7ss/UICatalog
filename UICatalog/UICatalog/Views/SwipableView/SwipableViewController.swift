@@ -27,6 +27,7 @@ extension SwipableViewController {
         self.imgURLs.enumerated().map { args in
             self.setupSwipableView(args.offset)
         }
+        self.setUserInteraction()
     }
     
     /// Viewの設定
@@ -44,6 +45,16 @@ extension SwipableViewController {
         }
         else {
             self.swipableBaseView.addSubview(swipableCardView)
+        }
+    }
+    
+    // 画面上にあるカードの山のうち、一番上にあるViewのみを操作できるようにする
+    private func setUserInteraction() {
+        self.swipableBaseView.subviews.enumerated().forEach { args in
+            if let view = args.element as? SwipableView {
+                let isUserInteractionEnabled = args.offset == self.swipableBaseView.subviews.count - 1
+                view.setUserInteraction(isUserInteractionEnabled)
+            }
         }
     }
 }
@@ -70,10 +81,12 @@ extension SwipableViewController: SwipableViewSetDelegate {
     
     func swipedLeftPosition(_ swipableView: SwipableView) {
         print("swipedLeftPosition")
+        self.setUserInteraction()
     }
     
     func swipedRightPosition(_ swipableView: SwipableView) {
         print("swipedRightPosition")
+        self.setUserInteraction()
     }
     
     func returnToOriginalPosition(_ swipableView: SwipableView) {

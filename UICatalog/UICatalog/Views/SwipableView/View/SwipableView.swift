@@ -90,6 +90,11 @@ class SwipableView: BaseView {
         }
     }
     
+    /// 自身のUserInteractionを有効無効を切り替える
+    func setUserInteraction(_ enable: Bool) {
+        self.isUserInteractionEnabled = enable
+    }
+    
     private func setShadow() {
         self.layer.cornerRadius = 10
         self.layer.shadowColor = UIColor.black.cgColor
@@ -180,11 +185,9 @@ extension SwipableView {
             
             if shouldMoveToLeft {
                 self.moveOutOfScreen(tan, isLeft: true)
-                self.delegate?.swipedLeftPosition(self)
             }
             else if shouldMoveToRight {
                 self.moveOutOfScreen(tan, isLeft: false)
-                self.delegate?.swipedRightPosition(self)
             }
             else {
                 self.returnToOriginalPosition()
@@ -219,6 +222,13 @@ extension SwipableView {
             self.center = endCenterPosition
         }) { _ in
             self.removeFromSuperview()
+            // completionが完了したらdelegateに通知
+            if isLeft {
+                self.delegate?.swipedLeftPosition(self)
+            }
+            else {
+                self.delegate?.swipedRightPosition(self)
+            }
         }
     }
     
