@@ -10,7 +10,7 @@ import UIKit
 
 final class SwipableViewController: UIViewController {
 
-    private var imgURLs = [String](repeating: "", count: 10)
+    private var imgURLs = [String](repeating: "", count: 3)
 
     @IBOutlet private weak var swipableBaseView: UIView!
     

@@ -68,7 +68,7 @@ final class SwipableViewDefaultSetting: SwipableViewSetting {
     
     static var swipableYThresholdLength: CGFloat = 0.7 * UIScreen.main.bounds.height / 2
 
-    static var lowerLimitViewScaling: CGFloat = 0.9
+    static var lowerLimitViewScaling: CGFloat = 0.8
 	
     static var upperTransitionLengthWhenExpandedFrontView: CGFloat = 200
 
