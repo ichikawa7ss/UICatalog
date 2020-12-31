@@ -16,6 +16,8 @@ class SwipableView: BaseView {
     @IBOutlet private weak var nationLabel: UILabel!
     @IBOutlet private weak var impressionView: ImpressionView!
     
+    var number: Int?
+    
     // デフォルトの中心値
     private var initialCenter: CGPoint = CGPoint(
         x: UIScreen.main.bounds.size.width / 2,
@@ -45,6 +47,8 @@ class SwipableView: BaseView {
     var delegate: SwipableViewSetDelegate?
     
     func setData(_ id: Int) {
+        self.number = id
+        
         self.setup()
         
         self.ageLabel.text = "27"
@@ -56,6 +60,23 @@ class SwipableView: BaseView {
         self.setShadow()
         self.impressionView.configure(String(3.0))
         self.impressionView.delegate = self
+    }
+    
+    /// 自身のViewを設定された最小値にスケーリングする
+    func setMinimamScale() {
+        let scale = SwipableViewDefaultSetting.lowerLimitViewScaling
+        self.transform = CGAffineTransform(scaleX: scale, y: scale)
+    }
+    
+    /// 指定の倍率に合わせて、画面を拡大縮小する
+    /// - Parameter scaleToInitialSize: 初期画面に対しての拡大縮小倍率。0~1をとる。
+    func scaleSizeBackView(_ scaleToInitialSize: CGFloat) {
+        let scale = CGFloat(scaleToInitialSize)
+
+        // 縮尺のセットアップ
+        UIView.animate(withDuration: SwipableViewDefaultSetting.durationOfScalingWhenPositionUpdated) {
+            self.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
     }
     
     private func setShadow() {
@@ -75,6 +96,7 @@ class SwipableView: BaseView {
 extension SwipableView {
     
     private func setPreferences() {
+        // frameのセットアップ
         self.frame = CGRect(
             origin: CGPoint.zero,
             size: CGSize(
@@ -196,6 +218,7 @@ extension SwipableView {
     private func returnToOriginalPosition() {
         
         UIView.animate(withDuration: self.durationOfReturnOriginal) {
+			// TODO: 左端を基準点にすると縮尺が変わってると中心からずれるのでcenterを基準にする
             self.frame.origin = .zero
             
             // TOOD: -　移動時に透過度や縮尺や回転などを変えていたりしたら元に戻す

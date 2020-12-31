@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yQA-fb-aja">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yQA-fb-aja">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -14,9 +14,26 @@
                     <view key="view" contentMode="scaleToFill" id="oz0-qZ-L1M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cj-bm-o70">
+                                <rect key="frame" x="35" y="183" width="344" height="530"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="530" id="R5e-gY-sMB"/>
+                                    <constraint firstAttribute="width" constant="344" id="tkL-Y7-S8x"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6cj-bm-o70" firstAttribute="centerY" secondItem="oz0-qZ-L1M" secondAttribute="centerY" id="CPE-vV-6Dn"/>
+                            <constraint firstItem="6cj-bm-o70" firstAttribute="centerX" secondItem="oz0-qZ-L1M" secondAttribute="centerX" id="cvl-80-kbQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bbT-bY-y1K"/>
                     </view>
+                    <connections>
+                        <outlet property="swipableBaseView" destination="6cj-bm-o70" id="eEv-Bm-JDC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Luq-bo-zk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

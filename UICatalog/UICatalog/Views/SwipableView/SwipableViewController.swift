@@ -10,7 +10,9 @@ import UIKit
 
 final class SwipableViewController: UIViewController {
 
-    private var imgURLs = [String](repeating: "", count: 1)
+    private var imgURLs = [String](repeating: "", count: 10)
+
+    @IBOutlet private weak var swipableBaseView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,29 +24,47 @@ final class SwipableViewController: UIViewController {
 extension SwipableViewController {
     
     private func setup() {
-        let navigationBarHeight = self.navigationController?.navigationBar.frame.size.height ?? 0.0
-        let centerY = (self.view.frame.height - navigationBarHeight) / 2.0 + navigationBarHeight
-        let baseView = UIView()
-        baseView.frame = CGRect(x: 50, y: 50, width: 344, height: 530)
-        baseView.center = CGPoint(x: self.view.center.x , y: centerY)
-        self.view.addSubview(baseView)
-        
         self.imgURLs.enumerated().map { args in
-            let swipableCardView = SwipableView()
-            swipableCardView.delegate = self
-            swipableCardView.setData(args.offset)
-            
-            baseView.addSubview(swipableCardView)
+            self.setupSwipableView(args.offset)
+        }
+    }
+    
+    /// Viewの設定
+    /// - Parameter offset: データのoffset
+    private func setupSwipableView(_ offset: Int) {
+        
+        let swipableCardView = SwipableView()
+        swipableCardView.delegate = self
+        swipableCardView.setData(offset)
+        
+        if let firstView = self.swipableBaseView.subviews.first {
+            self.swipableBaseView.insertSubview(swipableCardView, belowSubview: firstView)
+			// 最前面のView以外は指定分縮小しておく
+            swipableCardView.setMinimamScale()
+        }
+        else {
+            self.swipableBaseView.addSubview(swipableCardView)
         }
     }
 }
 
 extension SwipableViewController: SwipableViewSetDelegate {
+
     func beganDragging(_ swipableView: SwipableView) {
         print("beganDragging")
     }
     
     func swipableView(_ swipableView: SwipableView, updatePosition: CGPoint) {
+        let dx = updatePosition.x - SwipableViewDefaultSetting.cardSetViewWidth / 2
+        let dy = updatePosition.y - SwipableViewDefaultSetting.cardSetViewHeight / 2
+        let ds = hypot(dx, dy)
+        let base = SwipableViewDefaultSetting.upperTransitionLengthWhenExpandedFrontView
+        let scale = SwipableViewDefaultSetting.lowerLimitViewScaling
+
+        let ratio = min(((ds / base) * (1.0 - scale) + scale), 1.0)
+        if let targetView = self.swipableBaseView.subviews[safe: self.swipableBaseView.subviews.count - 2] as? SwipableView {
+            targetView.scaleSizeBackView(ratio)
+        }
         print("updatePosition \(updatePosition)")
     }
     
@@ -58,5 +78,8 @@ extension SwipableViewController: SwipableViewSetDelegate {
     
     func returnToOriginalPosition(_ swipableView: SwipableView) {
         print("returnToOriginalPosition")
+        if let targetView = self.swipableBaseView.subviews[safe: self.swipableBaseView.subviews.count - 2] as? SwipableView {
+            targetView.setMinimamScale()
+        }
     }
 }

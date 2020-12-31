@@ -32,8 +32,22 @@ protocol SwipableViewSetting {
     /// Y方向のスワイプを許容する割合
     static var swipableYThresholdLength: CGFloat { get }
     
+    /// 最前面のViewに対する下のViewのサイズの最も低いスケール尺度
+    static var lowerLimitViewScaling: CGFloat { get }
+
+    /// スワイプ時にスケールする画面が最大のSizeになるときの重心の移動距離
+    static var upperTransitionLengthWhenExpandedFrontView: CGFloat { get }
+
+    /// 先頭Viewの下のViewが縮小するまでのアニメーション時間
+    static var durationOfReturnOriginalScaling: TimeInterval { get }
+
+    /// 先頭Viewのスワイプ時に下のViewが縮小するアニメーション時間
+    static var durationOfScalingWhenPositionUpdated: TimeInterval { get }
+
+    /// もとの場所に戻るまでのアニメーション時間
     static var durationOfReturnOriginal: TimeInterval { get }
 
+    /// 外にスワイプアウトするときのアニメーション時間
     static var durationOfSwipeOut: TimeInterval { get }
 
 }
@@ -54,6 +68,14 @@ final class SwipableViewDefaultSetting: SwipableViewSetting {
     
     static var swipableYThresholdLength: CGFloat = 0.7 * UIScreen.main.bounds.height / 2
 
+    static var lowerLimitViewScaling: CGFloat = 0.9
+	
+    static var upperTransitionLengthWhenExpandedFrontView: CGFloat = 200
+
+    static var durationOfReturnOriginalScaling: TimeInterval = 0.3
+
+    static var durationOfScalingWhenPositionUpdated: TimeInterval = 0.01
+    
     static var durationOfReturnOriginal: TimeInterval = 0.2
 
     static var durationOfSwipeOut: TimeInterval = 0.2
