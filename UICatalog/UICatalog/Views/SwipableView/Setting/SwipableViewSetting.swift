@@ -14,8 +14,8 @@ protocol SwipableViewSetting {
     /// カード用Viewの幅
     static var cardViewWidth: CGFloat { get }
 
-    /// カード用Viewの高さ
-    static var cardViewHeight: CGFloat { get }
+    /// カード用Viewの比率（高さ/幅）
+    static var cardViewAspectRatio: CGFloat { get }
     
     /// shadowOffset
     static var shadowOffset: CGSize { get }
@@ -36,7 +36,7 @@ protocol SwipableViewSetting {
     static var lowerLimitViewScaling: CGFloat { get }
 
     /// スワイプ時にスケールする画面が最大のSizeになるときの重心の移動距離
-    static var upperTransitionLengthWhenExpandedFrontView: CGFloat { get }
+    static var upperTransitionLengthWhenExpandedFirstView: CGFloat { get }
 
     /// 先頭Viewの下のViewが縮小するまでのアニメーション時間
     static var durationOfReturnOriginalScaling: TimeInterval { get }
@@ -54,9 +54,9 @@ protocol SwipableViewSetting {
 
 final class SwipableViewDefaultSetting: SwipableViewSetting {
    
-    static var cardViewWidth: CGFloat = 344
+    static var cardViewWidth: CGFloat = UIScreen.main.bounds.width - 32
     
-    static var cardViewHeight: CGFloat = 530
+    static var cardViewAspectRatio: CGFloat = 530 / 344
 
     static var shadowOffset: CGSize = CGSize(width: 0.0, height: 2.0)
     
@@ -64,13 +64,13 @@ final class SwipableViewDefaultSetting: SwipableViewSetting {
     
     static var shadowBlur: CGFloat = 11
     
-    static var swipableXThresholdLength: CGFloat =  0.7 * UIScreen.main.bounds.width / 2
+    static var swipableXThresholdLength: CGFloat = 0.8 * UIScreen.main.bounds.width / 2
     
-    static var swipableYThresholdLength: CGFloat = 0.7 * UIScreen.main.bounds.height / 2
+    static var swipableYThresholdLength: CGFloat = 0.8 * UIScreen.main.bounds.height / 2
 
-    static var lowerLimitViewScaling: CGFloat = 0.8
-	
-    static var upperTransitionLengthWhenExpandedFrontView: CGFloat = 200
+    static var lowerLimitViewScaling: CGFloat = 0.95
+    
+    static var upperTransitionLengthWhenExpandedFirstView: CGFloat = 200
 
     static var durationOfReturnOriginalScaling: TimeInterval = 0.3
 
