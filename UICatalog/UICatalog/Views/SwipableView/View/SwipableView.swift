@@ -38,7 +38,7 @@ class SwipableView: BaseView {
     
     // size
     private let cardViewWidth: CGFloat = SwipableViewDefaultSetting.cardViewWidth
-    private let cardViewHeight: CGFloat = SwipableViewDefaultSetting.cardViewHeight
+    private let cardViewHeight: CGFloat = SwipableViewDefaultSetting.cardViewWidth * SwipableViewDefaultSetting.cardViewAspectRatio
 
     // shadow
     private let shadowOffset: CGSize = SwipableViewDefaultSetting.shadowOffset
