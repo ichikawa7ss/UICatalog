@@ -53,6 +53,8 @@
 		75E0489A259B79A6007DADFB /* ImpressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E04899259B79A6007DADFB /* ImpressionView.swift */; };
 		75E0489C259B79B3007DADFB /* ImpressionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E0489B259B79B3007DADFB /* ImpressionView.xib */; };
 		75E048A0259B7B2F007DADFB /* HoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0489F259B7B2F007DADFB /* HoverView.swift */; };
+		75ECEB2925A87FA800339034 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECEB2825A87FA800339034 /* ChatViewController.swift */; };
+		75ECEB2B25A87FB700339034 /* ChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75ECEB2A25A87FB700339034 /* ChatViewController.storyboard */; };
 		75EEC570255B791600CFCB3A /* IrregularCollectionVewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */; };
 		75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CFD5251178D000EAF181 /* AppDelegate.swift */; };
 		75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F4CFDE251178D200EAF181 /* Assets.xcassets */; };
@@ -111,6 +113,8 @@
 		75E04899259B79A6007DADFB /* ImpressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionView.swift; sourceTree = "<group>"; };
 		75E0489B259B79B3007DADFB /* ImpressionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImpressionView.xib; sourceTree = "<group>"; };
 		75E0489F259B7B2F007DADFB /* HoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverView.swift; sourceTree = "<group>"; };
+		75ECEB2825A87FA800339034 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		75ECEB2A25A87FB700339034 /* ChatViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatViewController.storyboard; sourceTree = "<group>"; };
 		75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionVewLayout.swift; sourceTree = "<group>"; };
 		75F4CFD2251178D000EAF181 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F4CFD5251178D000EAF181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -385,6 +389,15 @@
 			path = HoverView;
 			sourceTree = "<group>";
 		};
+		75ECEB2725A87F9100339034 /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75ECEB2825A87FA800339034 /* ChatViewController.swift */,
+				75ECEB2A25A87FB700339034 /* ChatViewController.storyboard */,
+			);
+			path = ChatViewController;
+			sourceTree = "<group>";
+		};
 		75F4CFC9251178D000EAF181 = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +432,7 @@
 		75F4CFE925117A3D00EAF181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				75ECEB2725A87F9100339034 /* ChatViewController */,
 				75A0D6C52599C75100D763FF /* SwipableView */,
 				753EA8762593936300267229 /* SwitchableViewController */,
 				7516D56E254903E6005A4F50 /* IrregularCollectionLayout */,
@@ -544,6 +558,7 @@
 				756C5070253692BE0075498E /* LinerSmallTableCell.xib in Resources */,
 				7516D57D254908A1005A4F50 /* IrregularCollectionViewCell.xib in Resources */,
 				753EA8992593943100267229 /* SwitchButtonView.xib in Resources */,
+				75ECEB2B25A87FB700339034 /* ChatViewController.storyboard in Resources */,
 				75884F5C25241ACD007050C8 /* WEARItemView.xib in Resources */,
 				75F4CFEE25117ACF00EAF181 /* CatalogMenuViewController.storyboard in Resources */,
 				75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */,
@@ -640,6 +655,7 @@
 				7516D58125490F0A005A4F50 /* UICollectionView+.swift in Sources */,
 				75A0D6D02599CBCF00D763FF /* SwipableViewSetDelegate.swift in Sources */,
 				75884F5825241ABA007050C8 /* WEARItemView.swift in Sources */,
+				75ECEB2925A87FA800339034 /* ChatViewController.swift in Sources */,
 				750068E12552374A0071F39E /* IrregularCollectionContentsModel.swift in Sources */,
 				7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */,
 				756C5074253694DE0075498E /* LeftLargeTableCell.swift in Sources */,

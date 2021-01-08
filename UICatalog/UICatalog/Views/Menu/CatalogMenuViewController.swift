@@ -56,6 +56,9 @@ extension CatalogMenuViewController: UITableViewDelegate {
         case .swipableView:
             let vc = SwipableViewController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
+        case .chatViewController:
+            let vc = ChatViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -67,6 +70,7 @@ enum UIMenu: Int, CaseIterable {
     case regularCollectionLayout
     case irregularCollectionLayout
     case swipableView
+    case chatViewController
     
     var title: String {
         switch self {
@@ -80,6 +84,8 @@ enum UIMenu: Int, CaseIterable {
             return "Irregular Collection Layout"
         case .swipableView:
             return "Swipable View like Tinder"
+        case .chatViewController:
+            return "Chat UI with MessageKit library"
         }
         
     }
