@@ -46,3 +46,14 @@ View that moves the image with swipe like "Tinder".
 Users swipe left or right to make decisions.
 
 ![tinder_ui](https://user-images.githubusercontent.com/42941654/103721501-27f58500-5011-11eb-8a4c-946c68fbe9ba.gif)
+
+## ChatViewController with Customized MessageKit
+
+ViewController Customized [MessageKit](https://github.com/MessageKit/MessageKit).
+
+- add shadowed user icon to avatarView
+- add date label to accessoryView
+- arrange MessageContentCell layout
+- add custom cell for DateLabelCell
+
+![ChatViewContoroller](https://user-images.githubusercontent.com/42941654/108441070-b3606800-7297-11eb-9364-8499cb3f102a.gif)
