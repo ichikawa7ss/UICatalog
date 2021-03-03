@@ -1,16 +1,26 @@
 PODS:
+  - InputBarAccessoryView (5.2.2):
+    - InputBarAccessoryView/Core (= 5.2.2)
+  - InputBarAccessoryView/Core (5.2.2)
+  - MessageKit (3.4.2):
+    - InputBarAccessoryView (~> 5.2.1)
   - Nuke (9.1.2)
 
 DEPENDENCIES:
+  - MessageKit
   - Nuke
 
 SPEC REPOS:
   trunk:
+    - InputBarAccessoryView
+    - MessageKit
     - Nuke
 
 SPEC CHECKSUMS:
+  InputBarAccessoryView: 8ec44fced9840957831f7ab842e9c4fe6ff9a252
+  MessageKit: 5ff0908bce5a7b6e11bd0b60e13a33e03697d161
   Nuke: dd2e6be6a34c042a7861e190632781d11f253026
 
-PODFILE CHECKSUM: ef0b1f0703f4b01a252342cb0ace6d6d9e8b9a9b
+PODFILE CHECKSUM: 2594ca50eb2612cf2b7433cd5b8429dcf069a9d3
 
 COCOAPODS: 1.9.3

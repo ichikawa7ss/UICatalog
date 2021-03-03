@@ -8,4 +8,5 @@ target 'UICatalog' do
 
   # Pods for UICatalog
   pod 'Nuke'
+  pod 'MessageKit'
 end
