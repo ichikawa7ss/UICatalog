@@ -11,21 +11,24 @@ import MessageKit
 
 final class ChatViewController: MessagesViewController {
     
-    private var messages: [MessageType] = []
-    private let senderId1 = UUID().uuidString
-    private let senderId2 = UUID().uuidString
+    var messages: [MessageType] = []
+    let senderId1 = UUID().uuidString
+    let senderId2 = UUID().uuidString
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.messagesCollectionView.messagesDataSource = self
-        self.messagesCollectionView.messagesLayoutDelegate = self
-        self.messagesCollectionView.messagesDisplayDelegate = self
         self.setup()
         self.messagesCollectionView.scrollToBottom()
-        self.maintainPositionOnKeyboardFrameChanged = true
     }
     
     private func setup() {
+        self.setupData()
+        self.setInputBarPreference()
+        self.setupMessageKitProtocol()
+        self.setupMessageKitComponetLayout()
+    }
+    
+    private func setupData() {
         for i in 1...100 {
             var senderId: String
             if i % 2 == 0 {
@@ -39,30 +42,6 @@ final class ChatViewController: MessagesViewController {
             self.messages.append(message)
         }
     }
-}
-
-extension ChatViewController: MessagesDataSource {
-    func currentSender() -> SenderType {
-        return Sender(senderId: senderId1, displayName: "Me")
-    }
-    
-    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return self.messages[indexPath.section]
-    }
-    
-    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return self.messages.count
-    }
-    
-    
-}
-
-extension ChatViewController: MessagesLayoutDelegate {
-    
-}
-
-extension ChatViewController: MessagesDisplayDelegate {
-    
 }
 
 struct Sender: SenderType {
