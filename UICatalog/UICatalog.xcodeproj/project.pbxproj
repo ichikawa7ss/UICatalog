@@ -64,6 +64,8 @@
 		75E048A0259B7B2F007DADFB /* HoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0489F259B7B2F007DADFB /* HoverView.swift */; };
 		75ECEB2925A87FA800339034 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECEB2825A87FA800339034 /* ChatViewController.swift */; };
 		75ECEB2B25A87FB700339034 /* ChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75ECEB2A25A87FB700339034 /* ChatViewController.storyboard */; };
+		75ECFCA6260197CF00620ABB /* ScalingPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECFCA5260197CF00620ABB /* ScalingPictureViewController.swift */; };
+		75ECFCA9260197E700620ABB /* ScalingPictureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75ECFCA8260197E600620ABB /* ScalingPictureViewController.storyboard */; };
 		75EEC570255B791600CFCB3A /* IrregularCollectionVewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */; };
 		75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4CFD5251178D000EAF181 /* AppDelegate.swift */; };
 		75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F4CFDE251178D200EAF181 /* Assets.xcassets */; };
@@ -133,6 +135,8 @@
 		75E0489F259B7B2F007DADFB /* HoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverView.swift; sourceTree = "<group>"; };
 		75ECEB2825A87FA800339034 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		75ECEB2A25A87FB700339034 /* ChatViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatViewController.storyboard; sourceTree = "<group>"; };
+		75ECFCA5260197CF00620ABB /* ScalingPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingPictureViewController.swift; sourceTree = "<group>"; };
+		75ECFCA8260197E600620ABB /* ScalingPictureViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScalingPictureViewController.storyboard; sourceTree = "<group>"; };
 		75EEC56F255B791600CFCB3A /* IrregularCollectionVewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrregularCollectionVewLayout.swift; sourceTree = "<group>"; };
 		75F4CFD2251178D000EAF181 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F4CFD5251178D000EAF181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -471,6 +475,15 @@
 			path = ChatViewController;
 			sourceTree = "<group>";
 		};
+		75ECFCA32601977200620ABB /* ScalingPicuture */ = {
+			isa = PBXGroup;
+			children = (
+				75ECFCA5260197CF00620ABB /* ScalingPictureViewController.swift */,
+				75ECFCA8260197E600620ABB /* ScalingPictureViewController.storyboard */,
+			);
+			path = ScalingPicuture;
+			sourceTree = "<group>";
+		};
 		75F4CFC9251178D000EAF181 = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				753EB417260AC919006C6BE8 /* DigitInputView */,
+				75ECFCA32601977200620ABB /* ScalingPicuture */,
 				75ECEB2725A87F9100339034 /* ChatViewController */,
 				75A0D6C52599C75100D763FF /* SwipableView */,
 				753EA8762593936300267229 /* SwitchableViewController */,
@@ -652,6 +666,7 @@
 				753EA89E2593950600267229 /* HomeViewController.storyboard in Resources */,
 				75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */,
 				75884F6725241B7F007050C8 /* WEARItemFooterView.xib in Resources */,
+				75ECFCA9260197E700620ABB /* ScalingPictureViewController.storyboard in Resources */,
 				753EA87F259393E800267229 /* SwitchableRootViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +748,7 @@
 				75BD91D725EF227900B47549 /* UIColor+.swift in Sources */,
 				753EA87E259393E800267229 /* SwitchableRootViewController.swift in Sources */,
 				75BD91CC25EF1BD900B47549 /* ChatViewController+Setting.swift in Sources */,
+				75ECFCA6260197CF00620ABB /* ScalingPictureViewController.swift in Sources */,
 				75F4CFEC25117A8B00EAF181 /* CatalogMenuViewController.swift in Sources */,
 				7591661525187DAE00AFFE41 /* SlideSearchHeaderView.swift in Sources */,
 				7516D58125490F0A005A4F50 /* UICollectionView+.swift in Sources */,

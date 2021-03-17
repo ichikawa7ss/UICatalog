@@ -62,6 +62,9 @@ extension CatalogMenuViewController: UITableViewDelegate {
         case .digitInputView:
             let vc = DigitInputViewController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
+        case  .scalingPicture:
+            let vc = ScalingPictureViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -75,6 +78,7 @@ enum UIMenu: Int, CaseIterable {
     case swipableView
     case chatViewController
     case digitInputView
+    case scalingPicture
     
     var title: String {
         switch self {
@@ -92,6 +96,8 @@ enum UIMenu: Int, CaseIterable {
             return "Chat UI with MessageKit library"
         case .digitInputView:
             return "Digit input view for Two factor Authentication"
+        case .scalingPicture:
+            return "Scaling picutre like youtube"
         }
         
     }
