@@ -59,6 +59,9 @@ extension CatalogMenuViewController: UITableViewDelegate {
         case .chatViewController:
             let vc = ChatViewController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
+        case .digitInputView:
+            let vc = DigitInputViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -71,6 +74,7 @@ enum UIMenu: Int, CaseIterable {
     case irregularCollectionLayout
     case swipableView
     case chatViewController
+    case digitInputView
     
     var title: String {
         switch self {
@@ -86,6 +90,8 @@ enum UIMenu: Int, CaseIterable {
             return "Swipable View like Tinder"
         case .chatViewController:
             return "Chat UI with MessageKit library"
+        case .digitInputView:
+            return "Digit input view for Two factor Authentication"
         }
         
     }

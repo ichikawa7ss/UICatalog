@@ -22,6 +22,10 @@
 		753EA89E2593950600267229 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753EA89C2593950600267229 /* HomeViewController.storyboard */; };
 		753EA8A12593953300267229 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753EA89F2593953300267229 /* SearchViewController.storyboard */; };
 		753EA8A22593953300267229 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EA8A02593953300267229 /* SearchViewController.swift */; };
+		753EB419260AC938006C6BE8 /* DigitInputViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753EB418260AC938006C6BE8 /* DigitInputViewController.storyboard */; };
+		753EB41C260AC9D7006C6BE8 /* DigitInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EB41B260AC9D7006C6BE8 /* DigitInputViewController.swift */; };
+		753EB421260ACAE0006C6BE8 /* DigitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EB420260ACAE0006C6BE8 /* DigitInputView.swift */; };
+		753EB424260ACAF1006C6BE8 /* DigitInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753EB423260ACAF1006C6BE8 /* DigitInputView.xib */; };
 		756C5066253690670075498E /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C5065253690670075498E /* UITableView+.swift */; };
 		756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C506D253692BE0075498E /* LinerSmallTableCell.swift */; };
 		756C5070253692BE0075498E /* LinerSmallTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756C506E253692BE0075498E /* LinerSmallTableCell.xib */; };
@@ -87,6 +91,10 @@
 		753EA89C2593950600267229 /* HomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		753EA89F2593953300267229 /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		753EA8A02593953300267229 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		753EB418260AC938006C6BE8 /* DigitInputViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DigitInputViewController.storyboard; sourceTree = "<group>"; };
+		753EB41B260AC9D7006C6BE8 /* DigitInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitInputViewController.swift; sourceTree = "<group>"; };
+		753EB420260ACAE0006C6BE8 /* DigitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitInputView.swift; sourceTree = "<group>"; };
+		753EB423260ACAF1006C6BE8 /* DigitInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DigitInputView.xib; sourceTree = "<group>"; };
 		756C5065253690670075498E /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		756C506D253692BE0075498E /* LinerSmallTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinerSmallTableCell.swift; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.swift; sourceTree = SOURCE_ROOT; };
 		756C506E253692BE0075498E /* LinerSmallTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LinerSmallTableCell.xib; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.xib; sourceTree = SOURCE_ROOT; };
@@ -232,6 +240,33 @@
 				753EA8902593943100267229 /* SwitchButtonView.swift */,
 			);
 			path = Parts;
+			sourceTree = "<group>";
+		};
+		753EB417260AC919006C6BE8 /* DigitInputView */ = {
+			isa = PBXGroup;
+			children = (
+				753EB41E260ACAB0006C6BE8 /* Parts */,
+				753EB418260AC938006C6BE8 /* DigitInputViewController.storyboard */,
+				753EB41B260AC9D7006C6BE8 /* DigitInputViewController.swift */,
+			);
+			path = DigitInputView;
+			sourceTree = "<group>";
+		};
+		753EB41E260ACAB0006C6BE8 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				753EB41F260ACAB7006C6BE8 /* DigitInputView */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
+		753EB41F260ACAB7006C6BE8 /* DigitInputView */ = {
+			isa = PBXGroup;
+			children = (
+				753EB420260ACAE0006C6BE8 /* DigitInputView.swift */,
+				753EB423260ACAF1006C6BE8 /* DigitInputView.xib */,
+			);
+			path = DigitInputView;
 			sourceTree = "<group>";
 		};
 		756C505D25368AFD0075498E /* Cell */ = {
@@ -470,6 +505,7 @@
 		75F4CFE925117A3D00EAF181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				753EB417260AC919006C6BE8 /* DigitInputView */,
 				75ECEB2725A87F9100339034 /* ChatViewController */,
 				75A0D6C52599C75100D763FF /* SwipableView */,
 				753EA8762593936300267229 /* SwitchableViewController */,
@@ -602,11 +638,13 @@
 				75F4CFEE25117ACF00EAF181 /* CatalogMenuViewController.storyboard in Resources */,
 				75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */,
 				756C5075253694DE0075498E /* LeftLargeTableCell.xib in Resources */,
+				753EB419260AC938006C6BE8 /* DigitInputViewController.storyboard in Resources */,
 				75A0D6C82599C78600D763FF /* SwipableViewController.storyboard in Resources */,
 				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
 				753EA8A12593953300267229 /* SearchViewController.storyboard in Resources */,
 				75E0489C259B79B3007DADFB /* ImpressionView.xib in Resources */,
 				7516D57625490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard in Resources */,
+				753EB424260ACAF1006C6BE8 /* DigitInputView.xib in Resources */,
 				75A0D6D82599D98700D763FF /* SwipableView.xib in Resources */,
 				75BD91DC25EF256500B47549 /* UserIconView.xib in Resources */,
 				75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */,
@@ -675,6 +713,7 @@
 				75D14179256DEEAF00823BCB /* Array+.swift in Sources */,
 				753EA8A22593953300267229 /* SearchViewController.swift in Sources */,
 				75F4CFF425117D6900EAF181 /* UIViewController+.swift in Sources */,
+				753EB41C260AC9D7006C6BE8 /* DigitInputViewController.swift in Sources */,
 				756C5066253690670075498E /* UITableView+.swift in Sources */,
 				756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */,
 				75E048A0259B7B2F007DADFB /* HoverView.swift in Sources */,
@@ -701,6 +740,7 @@
 				75884F5825241ABA007050C8 /* WEARItemView.swift in Sources */,
 				75ECEB2925A87FA800339034 /* ChatViewController.swift in Sources */,
 				750068E12552374A0071F39E /* IrregularCollectionContentsModel.swift in Sources */,
+				753EB421260ACAE0006C6BE8 /* DigitInputView.swift in Sources */,
 				7591661C2518A3E100AFFE41 /* Bundle+.swift in Sources */,
 				756C5074253694DE0075498E /* LeftLargeTableCell.swift in Sources */,
 				75BCC3EC2511A1AE0058F73D /* SearchAnimationViewController.swift in Sources */,
