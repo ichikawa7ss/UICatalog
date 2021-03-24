@@ -57,3 +57,12 @@ ViewController Customized [MessageKit](https://github.com/MessageKit/MessageKit)
 - add custom cell for DateLabelCell
 
 ![ChatViewContoroller](https://user-images.githubusercontent.com/42941654/108441070-b3606800-7297-11eb-9364-8499cb3f102a.gif)
+
+## Digit input view for two factor authentication
+
+Input form for 6 digit code when required two factor authentication.
+
+- auto moving focus
+- only one number per field
+
+![DigitInputView](https://user-images.githubusercontent.com/42941654/112250758-50e6f700-8c9d-11eb-8679-e9387ac39f65.gif)
