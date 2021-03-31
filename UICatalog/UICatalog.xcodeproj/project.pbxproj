@@ -37,6 +37,8 @@
 		75884F6325241B5E007050C8 /* WEARItemFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75884F6225241B5E007050C8 /* WEARItemFooterView.swift */; };
 		75884F6725241B7F007050C8 /* WEARItemFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75884F6625241B7F007050C8 /* WEARItemFooterView.xib */; };
 		75884F6A2524202F007050C8 /* RegularCollectionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75884F692524202F007050C8 /* RegularCollectionLayoutViewController.swift */; };
+		758BBC4B261406E7004E89E8 /* ShrinkingModalParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758BBC4A261406E7004E89E8 /* ShrinkingModalParentViewController.swift */; };
+		758BBC4F26140705004E89E8 /* ShrinkingModalParentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758BBC4E26140705004E89E8 /* ShrinkingModalParentViewController.storyboard */; };
 		7591661525187DAE00AFFE41 /* SlideSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591661425187DAE00AFFE41 /* SlideSearchHeaderView.swift */; };
 		7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7591661725187DDB00AFFE41 /* SlideSearchHeaderView.xib */; };
 		7591661A2518A3C200AFFE41 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759166192518A3C200AFFE41 /* BaseView.swift */; };
@@ -58,6 +60,8 @@
 		75BD91DA25EF249200B47549 /* UserIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD91D925EF249200B47549 /* UserIconView.swift */; };
 		75BD91DC25EF256500B47549 /* UserIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BD91DB25EF256500B47549 /* UserIconView.xib */; };
 		75D14179256DEEAF00823BCB /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D14178256DEEAF00823BCB /* Array+.swift */; };
+		75D48AE926140B3B004A344D /* ShrinkingModalChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D48AE826140B3B004A344D /* ShrinkingModalChildViewController.swift */; };
+		75D48AEC26140B45004A344D /* ShrinkingModalChildViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D48AEB26140B45004A344D /* ShrinkingModalChildViewController.storyboard */; };
 		75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DEA7B0253754EA00439EC8 /* UIImageView+.swift */; };
 		75E0489A259B79A6007DADFB /* ImpressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E04899259B79A6007DADFB /* ImpressionView.swift */; };
 		75E0489C259B79B3007DADFB /* ImpressionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E0489B259B79B3007DADFB /* ImpressionView.xib */; };
@@ -106,6 +110,8 @@
 		75884F6225241B5E007050C8 /* WEARItemFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEARItemFooterView.swift; sourceTree = "<group>"; };
 		75884F6625241B7F007050C8 /* WEARItemFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WEARItemFooterView.xib; sourceTree = "<group>"; };
 		75884F692524202F007050C8 /* RegularCollectionLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularCollectionLayoutViewController.swift; sourceTree = "<group>"; };
+		758BBC4A261406E7004E89E8 /* ShrinkingModalParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkingModalParentViewController.swift; sourceTree = "<group>"; };
+		758BBC4E26140705004E89E8 /* ShrinkingModalParentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShrinkingModalParentViewController.storyboard; sourceTree = "<group>"; };
 		7591661425187DAE00AFFE41 /* SlideSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSearchHeaderView.swift; sourceTree = "<group>"; };
 		7591661725187DDB00AFFE41 /* SlideSearchHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideSearchHeaderView.xib; sourceTree = "<group>"; };
 		759166192518A3C200AFFE41 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 		75BD91D925EF249200B47549 /* UserIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIconView.swift; sourceTree = "<group>"; };
 		75BD91DB25EF256500B47549 /* UserIconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserIconView.xib; sourceTree = "<group>"; };
 		75D14178256DEEAF00823BCB /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		75D48AE826140B3B004A344D /* ShrinkingModalChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkingModalChildViewController.swift; sourceTree = "<group>"; };
+		75D48AEB26140B45004A344D /* ShrinkingModalChildViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShrinkingModalChildViewController.storyboard; sourceTree = "<group>"; };
 		75DEA7B0253754EA00439EC8 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		75E04899259B79A6007DADFB /* ImpressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionView.swift; sourceTree = "<group>"; };
 		75E0489B259B79B3007DADFB /* ImpressionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImpressionView.xib; sourceTree = "<group>"; };
@@ -319,6 +327,16 @@
 			path = Parts;
 			sourceTree = "<group>";
 		};
+		758BBC49261406A8004E89E8 /* ShrinkingModalAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				75D48AE6261409B4004A344D /* Child */,
+				758BBC4A261406E7004E89E8 /* ShrinkingModalParentViewController.swift */,
+				758BBC4E26140705004E89E8 /* ShrinkingModalParentViewController.storyboard */,
+			);
+			path = ShrinkingModalAnimation;
+			sourceTree = "<group>";
+		};
 		7591661325187D9000AFFE41 /* Parts */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +445,15 @@
 			path = UserIconView;
 			sourceTree = "<group>";
 		};
+		75D48AE6261409B4004A344D /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				75D48AE826140B3B004A344D /* ShrinkingModalChildViewController.swift */,
+				75D48AEB26140B45004A344D /* ShrinkingModalChildViewController.storyboard */,
+			);
+			path = Child;
+			sourceTree = "<group>";
+		};
 		75E04897259B796A007DADFB /* Parts */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +532,7 @@
 		75F4CFE925117A3D00EAF181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				758BBC49261406A8004E89E8 /* ShrinkingModalAnimation */,
 				753EB417260AC919006C6BE8 /* DigitInputView */,
 				75ECEB2725A87F9100339034 /* ChatViewController */,
 				75A0D6C52599C75100D763FF /* SwipableView */,
@@ -630,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75BCC3EA2511A0930058F73D /* SearchAnimationViewController.storyboard in Resources */,
+				75D48AEC26140B45004A344D /* ShrinkingModalChildViewController.storyboard in Resources */,
 				756C5070253692BE0075498E /* LinerSmallTableCell.xib in Resources */,
 				7516D57D254908A1005A4F50 /* IrregularCollectionViewCell.xib in Resources */,
 				753EA8992593943100267229 /* SwitchButtonView.xib in Resources */,
@@ -643,6 +672,7 @@
 				7591661825187DDB00AFFE41 /* SlideSearchHeaderView.xib in Resources */,
 				753EA8A12593953300267229 /* SearchViewController.storyboard in Resources */,
 				75E0489C259B79B3007DADFB /* ImpressionView.xib in Resources */,
+				758BBC4F26140705004E89E8 /* ShrinkingModalParentViewController.storyboard in Resources */,
 				7516D57625490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard in Resources */,
 				753EB424260ACAF1006C6BE8 /* DigitInputView.xib in Resources */,
 				75A0D6D82599D98700D763FF /* SwipableView.xib in Resources */,
@@ -711,6 +741,7 @@
 				75A0D6CA2599C79400D763FF /* SwipableViewController.swift in Sources */,
 				75BCC3EF2511A3D10058F73D /* UICatalogNavigationController.swift in Sources */,
 				75D14179256DEEAF00823BCB /* Array+.swift in Sources */,
+				75D48AE926140B3B004A344D /* ShrinkingModalChildViewController.swift in Sources */,
 				753EA8A22593953300267229 /* SearchViewController.swift in Sources */,
 				75F4CFF425117D6900EAF181 /* UIViewController+.swift in Sources */,
 				753EB41C260AC9D7006C6BE8 /* DigitInputViewController.swift in Sources */,
@@ -727,6 +758,7 @@
 				753EA89D2593950600267229 /* HomeViewController.swift in Sources */,
 				75EEC570255B791600CFCB3A /* IrregularCollectionVewLayout.swift in Sources */,
 				75F4CFD6251178D000EAF181 /* AppDelegate.swift in Sources */,
+				758BBC4B261406E7004E89E8 /* ShrinkingModalParentViewController.swift in Sources */,
 				7516D57C254908A1005A4F50 /* IrregularCollectionViewCell.swift in Sources */,
 				75E0489A259B79A6007DADFB /* ImpressionView.swift in Sources */,
 				753EA89A2593943100267229 /* SwitchButtonView.swift in Sources */,
