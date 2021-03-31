@@ -62,6 +62,8 @@
 		75D14179256DEEAF00823BCB /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D14178256DEEAF00823BCB /* Array+.swift */; };
 		75D48AE926140B3B004A344D /* ShrinkingModalChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D48AE826140B3B004A344D /* ShrinkingModalChildViewController.swift */; };
 		75D48AEC26140B45004A344D /* ShrinkingModalChildViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D48AEB26140B45004A344D /* ShrinkingModalChildViewController.storyboard */; };
+		75D48AF726140EB7004A344D /* ShrinkingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D48AF626140EB7004A344D /* ShrinkingCell.xib */; };
+		75D48AFA26141031004A344D /* ShrinkingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D48AF926141031004A344D /* ShrinkingCell.swift */; };
 		75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DEA7B0253754EA00439EC8 /* UIImageView+.swift */; };
 		75E0489A259B79A6007DADFB /* ImpressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E04899259B79A6007DADFB /* ImpressionView.swift */; };
 		75E0489C259B79B3007DADFB /* ImpressionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E0489B259B79B3007DADFB /* ImpressionView.xib */; };
@@ -135,6 +137,8 @@
 		75D14178256DEEAF00823BCB /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		75D48AE826140B3B004A344D /* ShrinkingModalChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkingModalChildViewController.swift; sourceTree = "<group>"; };
 		75D48AEB26140B45004A344D /* ShrinkingModalChildViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShrinkingModalChildViewController.storyboard; sourceTree = "<group>"; };
+		75D48AF626140EB7004A344D /* ShrinkingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShrinkingCell.xib; sourceTree = "<group>"; };
+		75D48AF926141031004A344D /* ShrinkingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkingCell.swift; sourceTree = "<group>"; };
 		75DEA7B0253754EA00439EC8 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		75E04899259B79A6007DADFB /* ImpressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressionView.swift; sourceTree = "<group>"; };
 		75E0489B259B79B3007DADFB /* ImpressionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImpressionView.xib; sourceTree = "<group>"; };
@@ -448,10 +452,20 @@
 		75D48AE6261409B4004A344D /* Child */ = {
 			isa = PBXGroup;
 			children = (
+				75D48AF526140E8D004A344D /* Parts */,
 				75D48AE826140B3B004A344D /* ShrinkingModalChildViewController.swift */,
 				75D48AEB26140B45004A344D /* ShrinkingModalChildViewController.storyboard */,
 			);
 			path = Child;
+			sourceTree = "<group>";
+		};
+		75D48AF526140E8D004A344D /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				75D48AF626140EB7004A344D /* ShrinkingCell.xib */,
+				75D48AF926141031004A344D /* ShrinkingCell.swift */,
+			);
+			path = Parts;
 			sourceTree = "<group>";
 		};
 		75E04897259B796A007DADFB /* Parts */ = {
@@ -676,6 +690,7 @@
 				7516D57625490474005A4F50 /* IrregularCollectionLayoutViewController.storyboard in Resources */,
 				753EB424260ACAF1006C6BE8 /* DigitInputView.xib in Resources */,
 				75A0D6D82599D98700D763FF /* SwipableView.xib in Resources */,
+				75D48AF726140EB7004A344D /* ShrinkingCell.xib in Resources */,
 				75BD91DC25EF256500B47549 /* UserIconView.xib in Resources */,
 				75B48AD825374344009AAE54 /* RightLargeTableCell.xib in Resources */,
 				75884F532524197F007050C8 /* RegularCollectionLayoutViewController.storyboard in Resources */,
@@ -749,6 +764,7 @@
 				756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */,
 				75E048A0259B7B2F007DADFB /* HoverView.swift in Sources */,
 				75B48AD725374344009AAE54 /* RightLargeTableCell.swift in Sources */,
+				75D48AFA26141031004A344D /* ShrinkingCell.swift in Sources */,
 				75A0D6D42599CC5700D763FF /* SwipableView.swift in Sources */,
 				75BD91CF25EF1C3100B47549 /* ChatDateLabel.swift in Sources */,
 				75DEA7B1253754EA00439EC8 /* UIImageView+.swift in Sources */,
