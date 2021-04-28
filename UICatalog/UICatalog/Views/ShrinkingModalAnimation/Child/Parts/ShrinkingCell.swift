@@ -17,6 +17,6 @@ class ShrinkingCell: UITableViewCell {
     }
     
     func configure() {
-        self.shrinkingImageView.loadRandomImage(id: 100, width: 414, height: 600)
+        self.shrinkingImageView.loadRandomImage(id: 100, width: 375, height: 667)
     }
 }

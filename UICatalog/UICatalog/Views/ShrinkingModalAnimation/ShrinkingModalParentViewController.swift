@@ -16,7 +16,9 @@ final class ShrinkingModalParentViewController: UIViewController {
     
     @IBAction func didTapDetailButton(_ sender: Any) {
         let vc = ShrinkingModalChildViewController.instantiate()
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .overCurrentContext
+        // TODO: 間にBlurViewを挟む
+        // vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
     }
 }
