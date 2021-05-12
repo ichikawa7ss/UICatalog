@@ -25,7 +25,7 @@ final class ShrinkingModalChildViewController: UIViewController {
     }
     
     @IBAction func didTapCloseButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismissWithRemoveParentBlurView()
     }
     
     private func setGesture() {
@@ -53,7 +53,7 @@ final class ShrinkingModalChildViewController: UIViewController {
             let ratio = max(((swipableThresholdDiffY - abs(diff)) / swipableThresholdDiffY) * (1 - maxShrinkingScale) + maxShrinkingScale, maxShrinkingScale)
             if diff > swipableThresholdDiffY {
                 // 閾値を超えたらdismissする
-                self.dismiss(animated: true, completion: nil)
+                self.dismissWithRemoveParentBlurView()
             }
             else if diff != -48.0  {
                 // diffに合わせてself.viewをtransformする
@@ -67,6 +67,20 @@ final class ShrinkingModalChildViewController: UIViewController {
             }
         default:
             break
+        }
+    }
+    
+    private func dismissWithRemoveParentBlurView() {
+        guard let navVC = self.presentingViewController as? UINavigationController else {
+            print("navVCが取れていない")
+            return
+        }
+        guard let parent = navVC.viewControllers[safe: navVC.viewControllers.count - 1] as? ShrinkingModalParentViewController else {
+            print("parentが取れていない")
+            return
+        }
+        self.dismiss(animated: true) {
+            parent.removeBlurView()
         }
     }
 }
