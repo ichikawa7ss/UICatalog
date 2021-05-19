@@ -24,7 +24,7 @@ final class SwipableViewController: UIViewController {
 extension SwipableViewController {
     
     private func setup() {
-        self.imgURLs.enumerated().map { args in
+        _ = self.imgURLs.enumerated().map { args in
             self.setupSwipableView(args.offset)
         }
         self.setUserInteraction()

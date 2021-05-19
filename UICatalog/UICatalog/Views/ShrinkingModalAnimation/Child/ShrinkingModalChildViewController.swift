@@ -50,7 +50,9 @@ final class ShrinkingModalChildViewController: UIViewController {
         case .changed:
             let maxShrinkingScale = CGFloat(0.8) // 画面いっぱいに表示した状態からどこまで縮小を許すか
             let swipableThresholdDiffY = CGFloat(80) // swipeできる限界（どこまでいったらdismissするか）
-            let ratio = max(((swipableThresholdDiffY - abs(diff)) / swipableThresholdDiffY) * (1 - maxShrinkingScale) + maxShrinkingScale, maxShrinkingScale)
+            let scalingRatio = max(((swipableThresholdDiffY - abs(diff)) / swipableThresholdDiffY) * (1 - maxShrinkingScale) + maxShrinkingScale, maxShrinkingScale)
+            let minimumCornerRadius = CGFloat(20) // swipeできる限界（どこまでいったらdismissするか）
+            let conrerRadiusRatio = (1 - scalingRatio) * (5 * minimumCornerRadius)
             if diff > swipableThresholdDiffY {
                 // 閾値を超えたらdismissする
                 self.dismissWithRemoveParentBlurView()
@@ -58,7 +60,10 @@ final class ShrinkingModalChildViewController: UIViewController {
             else if diff != -48.0  {
                 // diffに合わせてself.viewをtransformする
                 UIView.animate(withDuration: 0.01) {
-                    self.view.transform = CGAffineTransform(scaleX: ratio, y: ratio)
+                    print(conrerRadiusRatio)
+                    self.view.cornerRadius = conrerRadiusRatio
+                    self.tableView.cornerRadius = conrerRadiusRatio
+                    self.view.transform = CGAffineTransform(scaleX: scalingRatio, y: scalingRatio)
                 }
             }
         case .ended, .cancelled:

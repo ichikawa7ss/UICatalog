@@ -11,18 +11,26 @@ import UIKit
 final class ShrinkingModalParentViewController: UIViewController {
     
     @IBOutlet private weak var toDetailButton: UIButton!
+    @IBOutlet weak var backMenuButton: UIButton! {
+        willSet {
+            newValue.setImage(UIImage(systemName: "arrowshape.turn.up.left.circle.fill"), for: .normal)
+            newValue.tintColor = .black
+            newValue.contentVerticalAlignment = .fill
+            newValue.contentHorizontalAlignment = .fill
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func didTapDetailButton(_ sender: Any) {
         self.makeBlurView()
         self.presentChild()
     }
-    
-    @IBAction func didTapRemoveBlurViewButton(_ sender: Any) {
-        self.removeBlurView()
+    @IBAction func didTapBackMenuButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func removeBlurView() {
