@@ -65,6 +65,9 @@ extension CatalogMenuViewController: UITableViewDelegate {
         case .shrinkingModalAnimation:
             let vc = ShrinkingModalParentViewController.instantiate()
             self.navigationController?.pushViewController(vc, animated: true)
+        case .longPressableView:
+            let vc = LongPressableViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -79,6 +82,7 @@ enum UIMenu: Int, CaseIterable {
     case chatViewController
     case digitInputView
     case shrinkingModalAnimation
+    case longPressableView
     
     var title: String {
         switch self {
@@ -98,6 +102,8 @@ enum UIMenu: Int, CaseIterable {
             return "Digit input view for Two factor Authentication"
         case .shrinkingModalAnimation:
             return "Shrinking dismiss animation"
+        case .longPressableView:
+            return "Floating view with long tap"
         }
         
     }

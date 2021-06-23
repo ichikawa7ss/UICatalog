@@ -26,6 +26,10 @@
 		753EB41C260AC9D7006C6BE8 /* DigitInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EB41B260AC9D7006C6BE8 /* DigitInputViewController.swift */; };
 		753EB421260ACAE0006C6BE8 /* DigitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EB420260ACAE0006C6BE8 /* DigitInputView.swift */; };
 		753EB424260ACAF1006C6BE8 /* DigitInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753EB423260ACAF1006C6BE8 /* DigitInputView.xib */; };
+		755B8AF32682C63C00B8D734 /* LongPressableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B8AF22682C63C00B8D734 /* LongPressableViewController.swift */; };
+		755B8AF62682C7D500B8D734 /* WEARItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B8AF52682C7D500B8D734 /* WEARItemCollectionCell.swift */; };
+		755B8AF82682CA2E00B8D734 /* WEARItemCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755B8AF72682CA2E00B8D734 /* WEARItemCollectionCell.xib */; };
+		755B8AFB2682CB8300B8D734 /* LongPressableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755B8AFA2682CB8300B8D734 /* LongPressableViewController.storyboard */; };
 		756C5066253690670075498E /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C5065253690670075498E /* UITableView+.swift */; };
 		756C506F253692BE0075498E /* LinerSmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C506D253692BE0075498E /* LinerSmallTableCell.swift */; };
 		756C5070253692BE0075498E /* LinerSmallTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756C506E253692BE0075498E /* LinerSmallTableCell.xib */; };
@@ -101,6 +105,10 @@
 		753EB41B260AC9D7006C6BE8 /* DigitInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitInputViewController.swift; sourceTree = "<group>"; };
 		753EB420260ACAE0006C6BE8 /* DigitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitInputView.swift; sourceTree = "<group>"; };
 		753EB423260ACAF1006C6BE8 /* DigitInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DigitInputView.xib; sourceTree = "<group>"; };
+		755B8AF22682C63C00B8D734 /* LongPressableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressableViewController.swift; sourceTree = "<group>"; };
+		755B8AF52682C7D500B8D734 /* WEARItemCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEARItemCollectionCell.swift; sourceTree = "<group>"; };
+		755B8AF72682CA2E00B8D734 /* WEARItemCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WEARItemCollectionCell.xib; sourceTree = "<group>"; };
+		755B8AFA2682CB8300B8D734 /* LongPressableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LongPressableViewController.storyboard; sourceTree = "<group>"; };
 		756C5065253690670075498E /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		756C506D253692BE0075498E /* LinerSmallTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinerSmallTableCell.swift; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.swift; sourceTree = SOURCE_ROOT; };
 		756C506E253692BE0075498E /* LinerSmallTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LinerSmallTableCell.xib; path = UICatalog/Views/RegularCollectionLayout/Parts/Cell/LinerSmallTableCell.xib; sourceTree = SOURCE_ROOT; };
@@ -279,6 +287,25 @@
 				753EB423260ACAF1006C6BE8 /* DigitInputView.xib */,
 			);
 			path = DigitInputView;
+			sourceTree = "<group>";
+		};
+		755B8AF12682C51500B8D734 /* LongPressableView */ = {
+			isa = PBXGroup;
+			children = (
+				755B8AF42682C7BD00B8D734 /* Parts */,
+				755B8AF22682C63C00B8D734 /* LongPressableViewController.swift */,
+				755B8AFA2682CB8300B8D734 /* LongPressableViewController.storyboard */,
+			);
+			path = LongPressableView;
+			sourceTree = "<group>";
+		};
+		755B8AF42682C7BD00B8D734 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				755B8AF52682C7D500B8D734 /* WEARItemCollectionCell.swift */,
+				755B8AF72682CA2E00B8D734 /* WEARItemCollectionCell.xib */,
+			);
+			path = Parts;
 			sourceTree = "<group>";
 		};
 		756C505D25368AFD0075498E /* Cell */ = {
@@ -546,6 +573,7 @@
 		75F4CFE925117A3D00EAF181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				755B8AF12682C51500B8D734 /* LongPressableView */,
 				758BBC49261406A8004E89E8 /* ShrinkingModalAnimation */,
 				753EB417260AC919006C6BE8 /* DigitInputView */,
 				75ECEB2725A87F9100339034 /* ChatViewController */,
@@ -680,6 +708,7 @@
 				75884F5C25241ACD007050C8 /* WEARItemView.xib in Resources */,
 				75F4CFEE25117ACF00EAF181 /* CatalogMenuViewController.storyboard in Resources */,
 				75F4CFE2251178D200EAF181 /* LaunchScreen.storyboard in Resources */,
+				755B8AF82682CA2E00B8D734 /* WEARItemCollectionCell.xib in Resources */,
 				756C5075253694DE0075498E /* LeftLargeTableCell.xib in Resources */,
 				753EB419260AC938006C6BE8 /* DigitInputViewController.storyboard in Resources */,
 				75A0D6C82599C78600D763FF /* SwipableViewController.storyboard in Resources */,
@@ -696,6 +725,7 @@
 				75884F532524197F007050C8 /* RegularCollectionLayoutViewController.storyboard in Resources */,
 				753EA89E2593950600267229 /* HomeViewController.storyboard in Resources */,
 				75F4CFDF251178D200EAF181 /* Assets.xcassets in Resources */,
+				755B8AFB2682CB8300B8D734 /* LongPressableViewController.storyboard in Resources */,
 				75884F6725241B7F007050C8 /* WEARItemFooterView.xib in Resources */,
 				753EA87F259393E800267229 /* SwitchableRootViewController.storyboard in Resources */,
 			);
@@ -750,6 +780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				755B8AF62682C7D500B8D734 /* WEARItemCollectionCell.swift in Sources */,
 				75BD91DA25EF249200B47549 /* UserIconView.swift in Sources */,
 				75A0D6CD2599CA2100D763FF /* SwipableViewSetting.swift in Sources */,
 				75F4CFF225117D4300EAF181 /* UIView+.swift in Sources */,
@@ -758,6 +789,7 @@
 				75D14179256DEEAF00823BCB /* Array+.swift in Sources */,
 				75D48AE926140B3B004A344D /* ShrinkingModalChildViewController.swift in Sources */,
 				753EA8A22593953300267229 /* SearchViewController.swift in Sources */,
+				755B8AF32682C63C00B8D734 /* LongPressableViewController.swift in Sources */,
 				75F4CFF425117D6900EAF181 /* UIViewController+.swift in Sources */,
 				753EB41C260AC9D7006C6BE8 /* DigitInputViewController.swift in Sources */,
 				756C5066253690670075498E /* UITableView+.swift in Sources */,
