@@ -15,10 +15,12 @@ final class LongPressableViewController: UIViewController {
             newValue.register(WEARItemCollectionCell.self)
         }
     }
+    var longPressRecognizer: UILongPressGestureRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.reloadData()
+        self.setupLongPressGesture()
     }
 }
 
@@ -46,5 +48,37 @@ extension LongPressableViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .zero
+    }
+}
+
+extension LongPressableViewController: UIGestureRecognizerDelegate {
+    
+    func setupLongPressGesture() {
+        self.longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longTapped))
+        self.longPressRecognizer?.allowableMovement = 15
+        self.longPressRecognizer?.minimumPressDuration = 0.2
+        self.collectionView.addGestureRecognizer(self.longPressRecognizer!)
+        self.longPressRecognizer!.delegate = self
+    }
+    
+    @objc
+    func longTapped(recognizer: UILongPressGestureRecognizer) {
+        let currentPoint = self.longPressRecognizer!.location(in: collectionView)
+        let currentRow = self.collectionView.indexPathForItem(at: currentPoint)
+        switch recognizer.state {
+        case .began:
+            
+            print(currentRow)
+        case .changed:
+            print(currentRow)
+        case .ended:
+            print(currentRow)
+        default:
+            break
+        }
+    }
+    
+    func boundsView() {
+        
     }
 }
